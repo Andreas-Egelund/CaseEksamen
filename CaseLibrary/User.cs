@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary
 {
-    internal class User
+    public  class User
     {
+
+        public void logout() 
+        {
+            Console.WriteLine("gedhegeh");
+        }
+
     }
 }
