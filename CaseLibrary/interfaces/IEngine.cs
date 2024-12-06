@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.interfaces
 {
-    internal interface IEngine
+    public interface IEngine
     {
+        public int _type;
+
+        public int _enginePower;
+
+        public int _engineRating;
+
+        public int _engineSpeed;
+
     }
 }
