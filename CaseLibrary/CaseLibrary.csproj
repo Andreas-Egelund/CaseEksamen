@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="models\" />
-    <Folder Include="Servicses\" />
   </ItemGroup>
 
 </Project>
