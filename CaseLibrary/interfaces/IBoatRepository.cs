@@ -11,12 +11,12 @@ namespace CaseLibrary.interfaces
     {
         List<Boat> GetAll();
 
-        public Boat GetBoatByNumber(int number);
+        Boat GetBoatByNumber(int number);
 
-        public void AddBoat(Boat boat);
-        public void RemoveBoat(Boat boat);
+        void AddBoat(Boat boat);
+        void RemoveBoat(Boat boat);
 
-        public void Fixboat(Boat boat);
+        void Fixboat(Boat boat);
 
 
     }

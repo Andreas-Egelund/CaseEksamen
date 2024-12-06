@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Entities
 {
-    class Admin
+    public class Admin
     {
 
 

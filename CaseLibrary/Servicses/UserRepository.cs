@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Servicses
 {
-    public class UserRepository :IUserRepository
+    public class UserRepository 
     {
     }
 }

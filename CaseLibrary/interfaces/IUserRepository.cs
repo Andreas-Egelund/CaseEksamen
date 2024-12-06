@@ -9,17 +9,17 @@ namespace CaseLibrary.interfaces
 {
     public interface IUserRepository
     {
-        private List<User> users();
+        List<User> users();
 
-        public List<User> GetAllUsers();
+        List<User> GetAllUsers();
 
-        public User GetuserById(int id);
+        User GetuserById(int id);
 
-        public void AddUseer(User user);
+        void AddUseer(User user);
 
-        public void UpdateUSer(User user);
+        void UpdateUSer(User user);
 
-        public void deleteUser(int id); 
+        void deleteUser(int id); 
 
 
     }

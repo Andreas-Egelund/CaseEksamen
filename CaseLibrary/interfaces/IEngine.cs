@@ -8,13 +8,13 @@ namespace CaseLibrary.interfaces
 {
     public interface IEngine
     {
-        public int _type;
+        int Type { get; set; }
 
-        public int _enginePower;
+        int EnginePower { get; set; }
 
-        public int _engineRating;
+        int EngineRating { get; set; }
 
-        public int _engineSpeed;
+        int EngineSpeed { get; set; }
 
     }
 }

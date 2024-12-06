@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Entities
 {
-    class Boat
+    public class Boat
     {
         private int _number;
         private static int _nextNumber;
@@ -32,7 +32,7 @@ namespace CaseLibrary.Entities
             _needsRepair = needsRepair;
             _lastRepair = lastRepair;
             _lastMaintenance = lastMaintenance;
-
+            _nextNumber++;
             _number = _nextNumber;
 
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Entities
 {
-    class User
+    public class User
     {
 
         private int _id;
