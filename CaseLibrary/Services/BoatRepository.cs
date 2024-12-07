@@ -1,8 +1,10 @@
-﻿using CaseLibrary.Entities;
+﻿using CaseLibrary.Data;
+using CaseLibrary.Entities;
 using CaseLibrary.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,14 +12,27 @@ namespace CaseLibrary.Servicses
 {
     public class BoatRepository : IBoatRepository
     {
+        private Dictionary<string, Boat> _boats;
+
+
+
+        public BoatRepository()
+        {
+            _boats = MockData.GetBoats();
+        }
+
+
         public void AddBoat(string sailNumber, Boat boat)
         {
-            throw new NotImplementedException();
+            _boats.TryAdd(sailNumber, boat);
         }
 
         public void DeleteBoatBySailNumber(string sailNumber)
         {
-            throw new NotImplementedException();
+            if (_boats.Keys.Contains(sailNumber))
+            {
+                _boats.Remove(sailNumber);
+            }
         }
 
         public void Fixboat(Boat boat)

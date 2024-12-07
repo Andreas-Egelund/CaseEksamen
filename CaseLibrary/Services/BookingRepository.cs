@@ -1,4 +1,6 @@
-﻿using CaseLibrary.interfaces;
+﻿using CaseLibrary.Data;
+using CaseLibrary.Entities;
+using CaseLibrary.interfaces;
 using CaseLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -10,27 +12,46 @@ namespace CaseLibrary.Services
 {
     class BookingRepository : IBookingRepository
     {
-        public void AddBooking(int bookingId, Booking booking)
+
+        private Dictionary<string, Booking> _bookings;
+
+
+        public BookingRepository()
         {
-            throw new NotImplementedException();
+            _bookings = MockData.GetBookings();
         }
 
-        public void DeleteBookingById(int bookingId)
+        public void AddBooking(string bookingId, Booking booking)
         {
-            throw new NotImplementedException();
+            _bookings.TryAdd(bookingId, booking);
         }
 
-        public Dictionary<int, Booking> GetAllBooking()
+        public void DeleteBookingById(string bookingId)
         {
-            throw new NotImplementedException();
+            if (_bookings.Keys.Contains(bookingId))
+            {
+                _bookings.Remove(bookingId);
+            }
         }
 
-        public Booking GetBookingById(int bookingId)
+        public Dictionary<string, Booking> GetAllBooking()
         {
-            throw new NotImplementedException();
+            return _bookings;
         }
 
-        public void UpdatebookingById(int bookingId)
+        public Booking GetBookingById(string bookingId)
+        {
+            if (_bookings.ContainsKey(bookingId))
+            {
+                return (_bookings[bookingId]);
+            }
+            else return null;
+        }
+
+
+
+        //TODO NEEDS IMPLEMENTATION
+        public void UpdatebookingById(string bookingId)
         {
             throw new NotImplementedException();
         }

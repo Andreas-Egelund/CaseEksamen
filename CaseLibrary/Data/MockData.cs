@@ -21,11 +21,11 @@ namespace CaseLibrary.Data
             {"RB005", new RowBoat("RB005", "Ocean Drifter", "Explorer Model Z", "20ft", 1990, "Yes", "2018-09-05", "2023-06-25", "Teak")},
 
 
-            {"MB001", new MotorBoat("MB001", "Speedster", "Sport Model X", "20ft", 2015, "No", "2022-11-20", "2023-04-15", new Engine("DI09 070M", 250,"ICFN", "2000"))},
-            {"MB002", new MotorBoat("MB002", "Wave Runner", "Luxury Model A", "25ft", 2012, "Yes", "2021-07-12", "2023-03-30", new Engine("DI09 072M", 350, "ICFN", "1900"))},
-            {"MB003", new MotorBoat("MB003", "Ocean Spirit", "Explorer Model B", "30ft", 2018, "No", "2023-01-10", "2023-08-05", new Engine("DI16 093M", 433, "IFN", "1400"))},
-            {"MB004", new MotorBoat("MB004", "Lake Racer", "Classic Model C", "18ft", 2009, "Yes", "2020-09-15", "2023-06-10", new Engine("DI16 076M", 846, "ICFN", "2300"))},
-            {"MB005", new MotorBoat("MB005", "River Voyager", "Adventure Model Z", "28ft", 2020, "No", "2022-10-18", "2023-09-20", new Engine("DI16 304M", 542, "IFN", "1700"))},
+            {"MB001", new MotorBoat("MB001", "Speedster", "Sport Model X", "20ft", 2015, "No", "2022-11-20", "2023-04-15", new JetDriveEngine("DI09 070M", 250,"ICFN", "2000"))},
+            {"MB002", new MotorBoat("MB002", "Wave Runner", "Luxury Model A", "25ft", 2012, "Yes", "2021-07-12", "2023-03-30", new JetDriveEngine("DI09 072M", 350, "ICFN", "1900"))},
+            {"MB003", new MotorBoat("MB003", "Ocean Spirit", "Explorer Model B", "30ft", 2018, "No", "2023-01-10", "2023-08-05", new JetDriveEngine("DI16 093M", 433, "IFN", "1400"))},
+            {"MB004", new MotorBoat("MB004", "Lake Racer", "Classic Model C", "18ft", 2009, "Yes", "2020-09-15", "2023-06-10", new JetDriveEngine("DI16 076M", 846, "ICFN", "2300"))},
+            {"MB005", new MotorBoat("MB005", "River Voyager", "Adventure Model Z", "28ft", 2020, "No", "2022-10-18", "2023-09-20", new JetDriveEngine("DI16 304M", 542, "IFN", "1700"))},
 
 
             {"SB001", new SailBoat("SB001", "Wind Whisper", "Classic Sail A", "25ft", 2010, "No", "2023-01-15", "2023-06-20", "Dacron") },

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Models
 {
-    public class Engine : IEngine
+    public class JetDriveEngine : IEngine
     {
 
-        public Engine(string type, int enginePower, string engineRating, string engineSpeed)
+        public JetDriveEngine(string type, int enginePower, string engineRating, string engineSpeed)
         {
             Type = type;
             EnginePower = enginePower;

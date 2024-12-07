@@ -11,15 +11,15 @@ namespace CaseLibrary.interfaces
     public interface IBookingRepository
     {
 
-        void AddBooking(int bookingId, Booking booking);
+        void AddBooking(string bookingId, Booking booking);
 
-        Dictionary<int, Booking> GetAllBooking();
+        Dictionary<string, Booking> GetAllBooking();
 
-        Booking GetBookingById(int bookingId);
+        Booking GetBookingById(string bookingId);
 
-        void UpdatebookingById(int bookingId);
+        void UpdatebookingById(string bookingId);
 
-        void DeleteBookingById(int bookingId);
+        void DeleteBookingById(string bookingId);
 
 
     }
