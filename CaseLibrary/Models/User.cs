@@ -9,9 +9,6 @@ namespace CaseLibrary.Entities
     public class User
     {
 
-        private int _id;
-        private static int _nextId;
-
         private string _name;
         private string _email;
         private string _password;
@@ -29,10 +26,6 @@ namespace CaseLibrary.Entities
             _address = address;
             _city = city;
             _zipCode = zipCode;
-            _nextId++;
-            _id = _nextId;
-
-
         }
 
         public void Login()

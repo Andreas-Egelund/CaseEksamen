@@ -8,32 +8,25 @@ namespace CaseLibrary.Entities
 {
     public class Boat
     {
-        private int _number;
-        private static int _nextNumber;
+        public string BoatNumber { get; set; }
+        public string Name { get; set; }
+        public string Model { get; set; }
+        public string Measurements { get; set; }
+        public int YearOfConstruction { get; set; }
+        public string NeedsRepair { get; set; }
+        public string LastRepair { get; set; }
+        public string LastMaintenance { get; set; }
 
-        public int _boatNumber;
-        public string _name;
-        public string _type;
-        public string _model;
-        public string _measure;
-        public int _yearOfConstruction;
-        public string _needsRepair;
-        public string _lastRepair;
-        public string _lastMaintenance;
-
-        public Boat(int boatNumber, string name, string type, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance)
+        public Boat(string boatNumber, string name, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance)
         {
-            _boatNumber = boatNumber;
-            _name = name;
-            _type = type;
-            _model = model;
-            _measure = measure;
-            _yearOfConstruction = yearOfConstruction;
-            _needsRepair = needsRepair;
-            _lastRepair = lastRepair;
-            _lastMaintenance = lastMaintenance;
-            _nextNumber++;
-            _number = _nextNumber;
+            BoatNumber = boatNumber;
+            Name = name;
+            Model = model;
+            Measurements = measure;
+            YearOfConstruction = yearOfConstruction;
+            NeedsRepair = needsRepair;
+            LastRepair = lastRepair;
+            LastMaintenance = lastMaintenance;
 
         }
 

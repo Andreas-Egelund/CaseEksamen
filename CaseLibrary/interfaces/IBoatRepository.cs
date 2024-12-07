@@ -9,12 +9,15 @@ namespace CaseLibrary.interfaces
 {
     public interface IBoatRepository
     {
-        List<Boat> GetAll();
+        void AddBoat(string sailNumber, Boat boat);
 
-        Boat GetBoatByNumber(int number);
+        Dictionary<string, Boat> GetAllBoats();
 
-        void AddBoat(Boat boat);
-        void RemoveBoat(Boat boat);
+        Boat GetBoatBySailNumber(string sailNumber);
+
+        void UpdateBoatBySailNumber(string sailNumber);
+
+        void DeleteBoatBySailNumber(string sailNumber);
 
         void Fixboat(Boat boat);
 
