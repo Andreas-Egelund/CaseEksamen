@@ -34,11 +34,11 @@ namespace CaseLibrary.Data
             {"RB005", new RowBoat("RB005", "Ocean Drifter", "Explorer Model Z", "20ft", 1990, "Yes", "2018-09-05", "2023-06-25", "Teak")},
 
 
-            {"MB001", new MotorBoat("MB001", "Speedster", "Sport Model X", "20ft", 2015, "No", "2022-11-20", "2023-04-15", new JetDriveEngine("DI09 070M", 250,"ICFN", "2000"))},
-            {"MB002", new MotorBoat("MB002", "Wave Runner", "Luxury Model A", "25ft", 2012, "Yes", "2021-07-12", "2023-03-30", new JetDriveEngine("DI09 072M", 350, "ICFN", "1900"))},
-            {"MB003", new MotorBoat("MB003", "Ocean Spirit", "Explorer Model B", "30ft", 2018, "No", "2023-01-10", "2023-08-05", new JetDriveEngine("DI16 093M", 433, "IFN", "1400"))},
-            {"MB004", new MotorBoat("MB004", "Lake Racer", "Classic Model C", "18ft", 2009, "Yes", "2020-09-15", "2023-06-10", new JetDriveEngine("DI16 076M", 846, "ICFN", "2300"))},
-            {"MB005", new MotorBoat("MB005", "River Voyager", "Adventure Model Z", "28ft", 2020, "No", "2022-10-18", "2023-09-20", new JetDriveEngine("DI16 304M", 542, "IFN", "1700"))},
+            {"MB001", new MotorBoat("MB001", "Speedster", "Sport Model X", "20ft", 2015, "No", "20/11/2022", "2023-04-15", new JetDriveEngine("DI09 070M", 250,"ICFN", "2000"))},
+            {"MB002", new MotorBoat("MB002", "Wave Runner", "Luxury Model A", "25ft", 2012, "Yes", "12/07/2021", "2023-03-30", new JetDriveEngine("DI09 072M", 350, "ICFN", "1900"))},
+            {"MB003", new MotorBoat("MB003", "Ocean Spirit", "Explorer Model B", "30ft", 2018, "No", "10/01/2023", "2023-08-05", new JetDriveEngine("DI16 093M", 433, "IFN", "1400"))},
+            {"MB004", new MotorBoat("MB004", "Lake Racer", "Classic Model C", "18ft", 2009, "Yes", "15/09/2020", "2023-06-10", new JetDriveEngine("DI16 076M", 846, "ICFN", "2300"))},
+            {"MB005", new MotorBoat("MB005", "River Voyager", "Adventure Model Z", "28ft", 2020, "No", "18/10/2022", "2023-09-20", new JetDriveEngine("DI16 304M", 542, "IFN", "1700"))},
 
 
             {"SB001", new SailBoat("SB001", "Wind Whisper", "Classic Sail A", "25ft", 2010, "No", "2023-01-15", "2023-06-20", "Dacron") },
@@ -54,11 +54,11 @@ namespace CaseLibrary.Data
         private static readonly Dictionary<string, Booking> Bookings = new Dictionary<string, Booking>()
         {
 
-            {"BK001", new Booking("BK001", Users["alice.johnson@example.com"], Boats["RB004"], "TestDato", "TestDuration", "Location") },
-            {"BK002", new Booking("BK002", Users["bob.smith@example.com"], Boats["MB004"], "2024-02-20", "4 hours", "Riverdale Harbor")},
-            {"BK003", new Booking("BK003", Users["charlie.brown@example.com"], Boats["SB005"], "2024-03-10", "1 day", "Lakeview Dock")},
-            {"BK004", new Booking("BK004", Users["diana.prince@example.com"], Boats["SB001"], "2024-03-25", "3 hours", "Seaside Bay")},
-            {"BK005", new Booking("BK005", Users["ethan.hunt@example.com"], Boats["MB003"], "2024-04-01", "6 hours", "Greenville Port")}
+            {"BK001", new Booking("BK001", Boats["RB004"], "25/03/2024", "2 hours", "Location") },
+            {"BK002", new Booking("BK002", Boats["MB004"], "20/02/2024", "4 hours", "Riverdale Harbor")},
+            {"BK003", new Booking("BK003", Boats["SB005"], "10/03/2024", "1 day", "Lakeview Dock")},
+            {"BK004", new Booking("BK004", Boats["SB001"], "25/03/2024", "3 hours", "Seaside Bay")},
+            {"BK005", new Booking("BK005", Boats["MB003"], "01/04/2024", "6 hours", "Greenville Port")}
 
         };
 

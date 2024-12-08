@@ -7,7 +7,6 @@ using CaseLibrary.Models;
 using CaseLibrary.Services;
 using CaseLibrary.Servicses;
 
-
 BoatRepository boatRepo = new BoatRepository();
 UserRepository userRepo = new UserRepository();
 BookingRepository bookingRepo = new BookingRepository();
@@ -15,23 +14,39 @@ BookingRepository bookingRepo = new BookingRepository();
 
 
 
-Console.WriteLine("-------------------All Users From MockData-------------------");
+boatRepo.GetBoatBySailNumber("SB005").NeedsRepair = "The Front fell off";
 
-foreach(User user in userRepo.GetAllUsers().Values)
-{
-    Console.WriteLine(user);
-    Console.WriteLine();
-
-}
+Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
 
 
-Console.WriteLine("-------------------All Boats From MockData-------------------");
 
-foreach(Boat boat in boatRepo.GetAllBoats().Values)
-{
-    Console.WriteLine(boat);
-    Console.WriteLine();
-}
+userRepo.GetUserByEmail("alice.johnson@example.com").AssignBookingToUser(bookingRepo.GetBookingById("BK003"));
+Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
 
 
-Console.WriteLine("---------------------------------------------------------");
+
+boatRepo.GetBoatBySailNumber("SB005").Fixboat();
+Console.WriteLine(boatRepo.GetBoatBySailNumber("SB005"));
+
+
+
+//Console.WriteLine("-------------------All Users From MockData-------------------");
+
+//foreach(User user in userRepo.GetAllUsers().Values)
+//{
+//    Console.WriteLine(user);
+//    Console.WriteLine();
+
+//}
+
+
+//Console.WriteLine("-------------------All Boats From MockData-------------------");
+
+//foreach(Boat boat in boatRepo.GetAllBoats().Values)
+//{
+//    Console.WriteLine(boat);
+//    Console.WriteLine();
+//}
+
+
+//Console.WriteLine("---------------------------------------------------------");

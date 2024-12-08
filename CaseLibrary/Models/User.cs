@@ -10,6 +10,9 @@ namespace CaseLibrary.Entities
     public class User
     {
 
+
+
+
         public string Name { get; set; }
         public string Email { get; set; }
         private string Password { get; }
@@ -17,7 +20,7 @@ namespace CaseLibrary.Entities
         public string Adress { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
-        public Dictionary<string, Booking> AssignedBookings { get; set; }
+        public Dictionary<string, Booking> AssignedBookings{ get; set; }
 
 
 
@@ -30,6 +33,7 @@ namespace CaseLibrary.Entities
             Adress = address;
             City = city;
             ZipCode = zipCode;
+            AssignedBookings = new Dictionary<string, Booking>();
         }
 
         public void Login()
@@ -47,15 +51,44 @@ namespace CaseLibrary.Entities
 
         public override string ToString()
         {
-            return $"" +
+            if (AssignedBookings.Count > 0)
+            {
+                return $"--------------------------------------\n" +
                 $"Name: {Name}\n" +
                 $"Email: {Email}\n" +
                 $"Phonenumber: {Phone}\n" +
                 $"Adress: {Adress}\n" +
                 $"City: {City}\n" +
-                $"Zipcode: {ZipCode}\n";
+                $"Zipcode: {ZipCode}\n" +
+                $"Bookings assigned to user: \n{PrintAllAssignedBookings()}\n";
+            }
+            else
+            {
 
+                return $"" +
+                    $"Name: {Name}\n" +
+                    $"Email: {Email}\n" +
+                    $"Phonenumber: {Phone}\n" +
+                    $"Adress: {Adress}\n" +
+                    $"City: {City}\n" +
+                    $"Zipcode: {ZipCode}\n";
+            }
         }
+
+        public void AssignBookingToUser(Booking booking)
+        {
+            AssignedBookings.TryAdd(booking.BookingId, booking);
+        }
+
+        public string PrintAllAssignedBookings()
+        {
+            foreach (Booking booking in AssignedBookings.Values)
+            {
+                return $"{booking}";
+            }
+            return null;
+        }
+
 
 
     }

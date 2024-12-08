@@ -33,7 +33,7 @@ namespace CaseLibrary.Entities
         public virtual string PrintAllBoatInfo()
         {
 
-            return $"" +
+            return $"---------------------------------------\n" +
                 $"BoatNumber: {BoatNumber}\n" +
                 $"Name {Name}\n" +
                 $"Model: {Model}\n" +
@@ -41,18 +41,21 @@ namespace CaseLibrary.Entities
                 $"Year of Construction {YearOfConstruction}\n" +
                 $"Needs Repair: {NeedsRepair}\n" +
                 $"Last Repair: {LastRepair}\n" +
-                $"Last Maintenance: {LastMaintenance}\n";
+                $"Last Maintenance: {LastMaintenance}\n" +
+                $"---------------------------------------\n";
 
         }
 
-        public void Fixboat(Boat boat)
+        public bool Fixboat()
         {
-            if (boat.NeedsRepair != "No")
+            if (NeedsRepair != "No")
             {
-                boat.NeedsRepair = "No";
-                boat.LastRepair = DateTime.Now.ToString();
-                boat.LastMaintenance = DateTime.Now.ToString();
+                LastRepair = $"{NeedsRepair} Fixed on {DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year}";
+                NeedsRepair = "No";
+                LastMaintenance = $"{DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year}";
+                return true;
             }
+            else return false;
         }
 
 
