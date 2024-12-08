@@ -81,7 +81,10 @@ namespace CaseLibrary.Servicses
         //TO DO. NEEDS IMPLEMENTATION
         public void UpdateUserByEmail(string email)
         {
-            throw new NotImplementedException();
+            foreach (var user in _users.Values ) 
+            {
+                _users[email] = user;
+            }
         }
     }
 }
