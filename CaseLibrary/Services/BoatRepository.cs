@@ -1,6 +1,7 @@
 ﻿using CaseLibrary.Data;
 using CaseLibrary.Entities;
 using CaseLibrary.interfaces;
+using CaseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,21 +36,25 @@ namespace CaseLibrary.Servicses
             }
         }
 
-        public void Fixboat(Boat boat)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Dictionary<string, Boat> GetAllBoats()
         {
-            throw new NotImplementedException();
+            return _boats;
         }
 
         public Boat GetBoatBySailNumber(string sailNumber)
         {
-            throw new NotImplementedException();
+            if (_boats.ContainsKey(sailNumber))
+            {
+                return (_boats[sailNumber]);
+            }
+            else return null;
         }
 
+
+        
+        //TODO NEEDS IMPLEMENTATION 
         public void UpdateBoatBySailNumber(string sailNumber)
         {
             throw new NotImplementedException();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaseLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,23 +10,26 @@ namespace CaseLibrary.Entities
     public class User
     {
 
-        private string _name;
-        private string _email;
-        private string _password;
-        private string _phone;
-        private string _address;
-        private string _city;
-        private string _zipCode;
+        public string Name { get; set; }
+        public string Email { get; set; }
+        private string Password { get; }
+        public string Phone { get; set; }
+        public string Adress { get; set; }
+        public string City { get; set; }
+        public string ZipCode { get; set; }
+        public Dictionary<string, Booking> AssignedBookings { get; set; }
+
+
 
         public User(string name, string email, string password, string phone, string address, string city, string zipCode)
         {
-            _name = name;
-            _email = email;
-            _password = password;
-            _phone = phone;
-            _address = address;
-            _city = city;
-            _zipCode = zipCode;
+            Name = name;
+            Email = email;
+            Password = password;
+            Phone = phone;
+            Adress = address;
+            City = city;
+            ZipCode = zipCode;
         }
 
         public void Login()
@@ -39,6 +43,20 @@ namespace CaseLibrary.Entities
         {
             Console.WriteLine("gedhegeh");
         }
+
+
+        public override string ToString()
+        {
+            return $"" +
+                $"Name: {Name}\n" +
+                $"Email: {Email}\n" +
+                $"Phonenumber: {Phone}\n" +
+                $"Adress: {Adress}\n" +
+                $"City: {City}\n" +
+                $"Zipcode: {ZipCode}\n";
+
+        }
+
 
     }
 }

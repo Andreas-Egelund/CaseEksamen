@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Services
 {
-    class BookingRepository : IBookingRepository
+    public class BookingRepository : IBookingRepository
     {
 
         private Dictionary<string, Booking> _bookings;

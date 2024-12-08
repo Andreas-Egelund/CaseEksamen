@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaseLibrary", "CaseLibrary\CaseLibrary.csproj", "{5F8E13ED-3330-42E3-8C0F-CA5368B814F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EksamenRazorPageFixed", "EksamenRazorPageFixed\EksamenRazorPageFixed.csproj", "{2B933321-35E0-44D1-96AF-3F5CAFA0363D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EksamenRazorPageFixed", "EksamenRazorPageFixed\EksamenRazorPageFixed.csproj", "{2B933321-35E0-44D1-96AF-3F5CAFA0363D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EksamensprojektConsoleApp", "EksamensprojektConsoleApp\EksamensprojektConsoleApp.csproj", "{8A665052-5DC8-4352-9418-65474D87CCDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2B933321-35E0-44D1-96AF-3F5CAFA0363D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B933321-35E0-44D1-96AF-3F5CAFA0363D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B933321-35E0-44D1-96AF-3F5CAFA0363D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A665052-5DC8-4352-9418-65474D87CCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A665052-5DC8-4352-9418-65474D87CCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A665052-5DC8-4352-9418-65474D87CCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A665052-5DC8-4352-9418-65474D87CCDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

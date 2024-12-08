@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Entities
 {
-    public class Boat
+    public abstract class Boat
     {
         public string BoatNumber { get; set; }
         public string Name { get; set; }
@@ -30,7 +30,30 @@ namespace CaseLibrary.Entities
 
         }
 
+        public virtual string PrintAllBoatInfo()
+        {
 
+            return $"" +
+                $"BoatNumber: {BoatNumber}\n" +
+                $"Name {Name}\n" +
+                $"Model: {Model}\n" +
+                $"Measurements: {Measurements}\n" +
+                $"Year of Construction {YearOfConstruction}\n" +
+                $"Needs Repair: {NeedsRepair}\n" +
+                $"Last Repair: {LastRepair}\n" +
+                $"Last Maintenance: {LastMaintenance}\n";
+
+        }
+
+        public void Fixboat(Boat boat)
+        {
+            if (boat.NeedsRepair != "No")
+            {
+                boat.NeedsRepair = "No";
+                boat.LastRepair = DateTime.Now.ToString();
+                boat.LastMaintenance = DateTime.Now.ToString();
+            }
+        }
 
 
 

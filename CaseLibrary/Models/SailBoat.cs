@@ -19,7 +19,22 @@ namespace CaseLibrary.Models
         }
 
 
+        public override string ToString()
+        {
 
+            return $"" +
+                $"BoatNumber: {BoatNumber}\n" +
+                $"Name {Name}\n" +
+                $"Model: {Model}\n" +
+                $"Measurements: {Measurements}\n" +
+                $"Year of Construction {YearOfConstruction}\n" +
+                $"Needs Repair: {NeedsRepair}\n" +
+                $"Last Repair: {LastRepair}\n" +
+                $"Last Maintenance: {LastMaintenance}\n" +
+                $"SailMaterial: {SailMaterial}\n";
+
+
+        }
 
 
     }

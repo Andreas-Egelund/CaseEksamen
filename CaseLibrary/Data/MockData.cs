@@ -12,6 +12,19 @@ namespace CaseLibrary.Data
     public static class MockData
     {
 
+        private static readonly Dictionary<string, User> Users = new Dictionary<string, User>()
+        {
+
+            {"alice.johnson@example.com", new User("Alice Johnson", "alice.johnson@example.com", "Password123!", "555-123-4567", "123 Maple St.", "Springfield", "12345") },
+            {"bob.smith@example.com", new User("Bob Smith", "bob.smith@example.com", "SecurePass456!", "555-987-6543", "456 Oak Ave.", "Riverdale", "67890")},
+            {"charlie.brown@example.com", new User("Charlie Brown", "charlie.brown@example.com", "Charlie789!", "555-456-7890", "789 Birch Ln.", "Greenville", "13579")},
+            {"diana.prince@example.com", new User("Diana Prince", "diana.prince@example.com", "Wonder123!", "555-321-6549", "321 Pine Dr.", "Metropolis", "24680")},
+            {"ethan.hunt@example.com", new User("Ethan Hunt", "ethan.hunt@example.com", "MissionImpossible1!", "555-654-1239", "654 Elm Ct.", "Hill Valley", "11223")}
+
+        };
+
+
+
         private static readonly Dictionary<string, Boat> Boats = new Dictionary<string, Boat>()
         {
             {"RB001", new RowBoat("RB001", "Sea Breeze", "Classic Model A", "15ft", 1985, "No", "2022-10-12", "2023-05-20", "Oak") },
@@ -52,16 +65,7 @@ namespace CaseLibrary.Data
 
 
 
-        private static readonly Dictionary<string, User> Users = new Dictionary<string, User>()
-        {
 
-            {"alice.johnson@example.com", new User("Alice Johnson", "alice.johnson@example.com", "Password123!", "555-123-4567", "123 Maple St.", "Springfield", "12345") },
-            {"bob.smith@example.com", new User("Bob Smith", "bob.smith@example.com", "SecurePass456!", "555-987-6543", "456 Oak Ave.", "Riverdale", "67890")},
-            {"charlie.brown@example.com", new User("Charlie Brown", "charlie.brown@example.com", "Charlie789!", "555-456-7890", "789 Birch Ln.", "Greenville", "13579")},
-            {"diana.prince@example.com", new User("Diana Prince", "diana.prince@example.com", "Wonder123!", "555-321-6549", "321 Pine Dr.", "Metropolis", "24680")},
-            {"ethan.hunt@example.com", new User("Ethan Hunt", "ethan.hunt@example.com", "MissionImpossible1!", "555-654-1239", "654 Elm Ct.", "Hill Valley", "11223")}
-
-        };
 
 
         public static Dictionary<string, Boat> GetBoats() { return Boats; }

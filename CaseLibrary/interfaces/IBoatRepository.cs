@@ -19,8 +19,6 @@ namespace CaseLibrary.interfaces
 
         void DeleteBoatBySailNumber(string sailNumber);
 
-        void Fixboat(Boat boat);
-
 
     }
 }
