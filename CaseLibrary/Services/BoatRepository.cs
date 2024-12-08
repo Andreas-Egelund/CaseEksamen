@@ -57,7 +57,10 @@ namespace CaseLibrary.Servicses
         //TODO NEEDS IMPLEMENTATION 
         public void UpdateBoatBySailNumber(string sailNumber)
         {
-            throw new NotImplementedException();
+            foreach(var boat in _boats.Values) 
+            {
+                _boats[sailNumber] = boat; 
+            }
         }
     }
 }

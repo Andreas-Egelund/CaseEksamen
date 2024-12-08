@@ -53,7 +53,10 @@ namespace CaseLibrary.Services
         //TODO NEEDS IMPLEMENTATION
         public void UpdatebookingById(string bookingId)
         {
-            throw new NotImplementedException();
+            foreach(var booking in _bookings.Values)
+            {
+                _bookings[bookingId] = booking;
+            }
         }
     }
 }
