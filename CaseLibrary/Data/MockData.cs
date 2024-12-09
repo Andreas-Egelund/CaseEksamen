@@ -51,6 +51,22 @@ namespace CaseLibrary.Data
 
 
 
+
+
+
+
+        private static readonly Dictionary<string, BookableEvent> Events = new Dictionary<string, BookableEvent>()
+        {
+            { "1102", new BookableEvent("1102","Conference", "30/6/2024", "2 hours") },
+            { "1249", new BookableEvent("1249", "Workshop", "20/2/2025", "3 hours") },
+            { "1437", new BookableEvent("1437", "Webinar", "9/5/2024", "1 hour") },
+            { "1675", new BookableEvent("1675", "Networking", "14/1/2025", "4 hours") },
+            { "1923", new BookableEvent("1923", "Seminar", "16/11/2024", "2 hours") },
+        };
+
+
+
+
         private static readonly Dictionary<string, Booking> Bookings = new Dictionary<string, Booking>()
         {
 
@@ -67,6 +83,7 @@ namespace CaseLibrary.Data
 
 
 
+        public static Dictionary<string, BookableEvent> GetAllEvents() { return Events; }
 
         public static Dictionary<string, Boat> GetBoats() { return Boats; }
 
