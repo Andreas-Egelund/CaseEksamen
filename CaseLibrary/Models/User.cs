@@ -21,6 +21,7 @@ namespace CaseLibrary.Entities
         public string City { get; set; }
         public string ZipCode { get; set; }
         public Dictionary<string, Booking> AssignedBookings{ get; set; }
+        public Dictionary<string, BookableEvent> AssignedEvents{ get; set; }
 
 
 
@@ -34,6 +35,7 @@ namespace CaseLibrary.Entities
             City = city;
             ZipCode = zipCode;
             AssignedBookings = new Dictionary<string, Booking>();
+            AssignedEvents = new Dictionary<string, BookableEvent>();
         }
 
         public void Login()
@@ -60,7 +62,7 @@ namespace CaseLibrary.Entities
                 $"Adress: {Adress}\n" +
                 $"City: {City}\n" +
                 $"Zipcode: {ZipCode}\n" +
-                $"Bookings assigned to user: \n{PrintAllAssignedBookings()}\n";
+                $"Bookings assigned to user: \n{string.Join("\n",AssignedBookings.Values)}\n";
             }
             else
             {
@@ -80,6 +82,12 @@ namespace CaseLibrary.Entities
             AssignedBookings.TryAdd(booking.BookingId, booking);
         }
 
+        public void AssignUserToEvent(BookableEvent bookableEvent)
+        {
+            AssignedEvents.TryAdd(bookableEvent.EventId, bookableEvent);
+        }
+
+
         public string PrintAllAssignedBookings()
         {
             foreach (Booking booking in AssignedBookings.Values)
@@ -88,6 +96,8 @@ namespace CaseLibrary.Entities
             }
             return null;
         }
+
+
 
 
 

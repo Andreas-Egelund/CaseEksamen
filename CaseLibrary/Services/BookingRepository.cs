@@ -50,13 +50,12 @@ namespace CaseLibrary.Services
 
 
 
-        //TODO NEEDS IMPLEMENTATION
+        //TODO This Method is not working as intended. Will overwrite the Booking with given key to have a value of each element until last element in dictionary, resulting in always overwriting given key,valuePair with last element of dict.
         public void UpdatebookingById(string bookingId)
         {
-            foreach(var booking in _bookings.Values)
-            {
-                _bookings[bookingId] = booking;
-            }
+
+            
+
         }
     }
 }

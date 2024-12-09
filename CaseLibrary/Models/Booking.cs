@@ -17,7 +17,7 @@ namespace CaseLibrary.Models
 
 
 
-        public Booking(string bookingId,Boat boatBooked, string date, string duration, string location)
+        public Booking(string bookingId, Boat boatBooked, string date, string duration, string location)
         {
             BookingId = bookingId;
             BoatBooked = boatBooked;
