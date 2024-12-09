@@ -37,7 +37,7 @@ namespace CaseLibrary.Models
                 $"BlogTitel: {BlogTitel}\n" +
                 $"Author:  {Author}\n" +
                 $"BodyText: {BodyText}\n" +
-                $"Date: {DateTime.Now.ToString("MM/dd/yyyy")}\n" +
+                $"Date: {Date}\n" +
                 $"---------------------------------------\n";
         }
 
