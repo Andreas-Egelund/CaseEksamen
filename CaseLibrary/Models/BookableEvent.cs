@@ -1,9 +1,12 @@
 ﻿using CaseLibrary.Entities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CaseLibrary.Models
 {
@@ -19,22 +22,30 @@ namespace CaseLibrary.Models
 
 
 
-        public BookableEvent(string eventId, string eventName, string date, string duration, Dictionary<string, User> assignedMembers)
+
+        public BookableEvent(string eventId, string eventName, string date, string duration)
         {
             EventId = eventId;
             EventName = eventName;
             Date = date;
             Duration = duration;
-            AssignedMembers = assignedMembers;
+            AssignedMembers = new Dictionary<string, User>();
         }
 
 
 
 
+        public override string ToString()
+        {
+            return $"---------------------------------------\n" +
+            $"EventName: {EventName}\n" +
+            $"Date: {Date}\n" +
+            $"Duration: {Duration}\n" +
+            $"Member signed up for this event:\n{string.Join("\n", AssignedMembers.Values)}\n";
 
-
-
-
+            
+            
+        }
 
     }
 }
