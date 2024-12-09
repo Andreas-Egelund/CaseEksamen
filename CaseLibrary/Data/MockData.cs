@@ -16,7 +16,7 @@ namespace CaseLibrary.Data
         {
 
             {"alice.johnson@example.com", new User("Alice Johnson", "alice.johnson@example.com", "Password123!", "555-123-4567", "123 Maple St.", "Springfield", "12345") },
-            {"bob.smith@example.com", new User("Bob Smith", "bob.smith@example.com", "SecurePass456!", "555-987-6543", "456 Oak Ave.", "Riverdale", "67890")},
+            {"bob.smith@example.com", new User("Alice Johnson", "bob.smith@example.com", "SecurePass456!", "555-987-6543", "456 Oak Ave.", "Riverdale", "67890")},
             {"charlie.brown@example.com", new User("Charlie Brown", "charlie.brown@example.com", "Charlie789!", "555-456-7890", "789 Birch Ln.", "Greenville", "13579")},
             {"diana.prince@example.com", new User("Diana Prince", "diana.prince@example.com", "Wonder123!", "555-321-6549", "321 Pine Dr.", "Metropolis", "24680")},
             {"ethan.hunt@example.com", new User("Ethan Hunt", "ethan.hunt@example.com", "MissionImpossible1!", "555-654-1239", "654 Elm Ct.", "Hill Valley", "11223")}
@@ -62,6 +62,14 @@ namespace CaseLibrary.Data
 
         };
 
+        private static readonly Dictionary<string, Blog> Blogs = new Dictionary<string, Blog>()
+        {
+        { "BL001", new Blog("BL001","The Rise of AI", Users["alice.johnson@example.com"], "Exploring the impact of AI on society.", "2024-12-01") },
+        { "BL002", new Blog("BL002","Healthy Eating Tips", Users["bob.smith@example.com"], "Simple ways to improve your diet.", "2024-11-25") },
+        { "BL003", new Blog("BL003","Traveling on a Budget", Users["charlie.brown@example.com"], "Tips for affordable and enjoyable travel.", "2024-12-03") },
+        { "BL004", new Blog("BL004","Mastering C# Programming", Users["diana.prince@example.com"], "A comprehensive guide to learning C#.", "2024-12-05") },
+        { "BL005", new Blog("BL005","The Future of Renewable Energy", Users["ethan.hunt@example.com"], "How renewable energy is shaping the world.", "2024-11-20") }
+        };
 
 
 
@@ -73,5 +81,7 @@ namespace CaseLibrary.Data
         public static Dictionary<string, Booking> GetBookings() { return Bookings; }
         
         public static Dictionary<string, User> GetUsers() { return Users; }
+
+        public static Dictionary<string, Blog> GetBlogs() { return Blogs; }
     }
 }
