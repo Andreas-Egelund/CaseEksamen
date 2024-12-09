@@ -78,7 +78,7 @@ namespace CaseLibrary.Servicses
 
 
 
-        //TO DO. NEEDS IMPLEMENTATION
+        //TODO This Method is not working as intended. Will overwrite the User with given key to have a value of each element until last element in dictionary, resulting in always overwriting given key,valuePair with last element of dict.
         public void UpdateUserByEmail(string email)
         {
             foreach (var user in _users.Values ) 

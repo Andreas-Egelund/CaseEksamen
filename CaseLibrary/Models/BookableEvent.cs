@@ -19,13 +19,13 @@ namespace CaseLibrary.Models
 
 
 
-        public BookableEvent(string eventId, string eventName, string date, string duration, Dictionary<string, User> assignedMembers)
+        public BookableEvent(string eventId, string eventName, string date, string duration)
         {
             EventId = eventId;
             EventName = eventName;
             Date = date;
             Duration = duration;
-            AssignedMembers = assignedMembers;
+            AssignedMembers = new Dictionary<string, User>();
         }
 
 

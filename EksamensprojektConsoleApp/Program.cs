@@ -21,12 +21,10 @@ Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
 
 
 userRepo.GetUserByEmail("alice.johnson@example.com").AssignBookingToUser(bookingRepo.GetBookingById("BK003"));
+userRepo.GetUserByEmail("alice.johnson@example.com").AssignBookingToUser(bookingRepo.GetBookingById("BK001"));
 Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
 
 
-
-boatRepo.GetBoatBySailNumber("SB005").Fixboat();
-Console.WriteLine(boatRepo.GetBoatBySailNumber("SB005"));
 
 
 
