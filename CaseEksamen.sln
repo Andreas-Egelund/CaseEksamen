@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaseLibrary", "CaseLibrary\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EksamenRazorPageFixed", "EksamenRazorPageFixed\EksamenRazorPageFixed.csproj", "{2B933321-35E0-44D1-96AF-3F5CAFA0363D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EksamensprojektConsoleApp", "EksamensprojektConsoleApp\EksamensprojektConsoleApp.csproj", "{8A665052-5DC8-4352-9418-65474D87CCDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EksamensprojektConsoleApp", "EksamensprojektConsoleApp\EksamensprojektConsoleApp.csproj", "{8A665052-5DC8-4352-9418-65474D87CCDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
