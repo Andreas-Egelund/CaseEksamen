@@ -1,4 +1,5 @@
-﻿using CaseLibrary.Entities;
+﻿using CaseLibrary.Data;
+using CaseLibrary.Entities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -30,6 +31,7 @@ namespace CaseLibrary.Models
             Date = date;
             Duration = duration;
             AssignedMembers = new Dictionary<string, User>();
+
         }
 
 

@@ -15,11 +15,11 @@ namespace CaseLibrary.Data
         private static readonly Dictionary<string, User> Users = new Dictionary<string, User>()
         {
 
-            {"alice.johnson@example.com", new User("Alice Johnson", "alice.johnson@example.com", "Password123!", "555-123-4567", "123 Maple St.", "Springfield", "12345") },
-            {"bob.smith@example.com", new User("Alice Johnson", "bob.smith@example.com", "SecurePass456!", "555-987-6543", "456 Oak Ave.", "Riverdale", "67890")},
-            {"charlie.brown@example.com", new User("Charlie Brown", "charlie.brown@example.com", "Charlie789!", "555-456-7890", "789 Birch Ln.", "Greenville", "13579")},
-            {"diana.prince@example.com", new User("Diana Prince", "diana.prince@example.com", "Wonder123!", "555-321-6549", "321 Pine Dr.", "Metropolis", "24680")},
-            {"ethan.hunt@example.com", new User("Ethan Hunt", "ethan.hunt@example.com", "MissionImpossible1!", "555-654-1239", "654 Elm Ct.", "Hill Valley", "11223")}
+            {"alice.johnson@example.com", new User("Alice Johnson", "alice.johnson@example.com", "Password123!", "555-123-4567", "123 Maple St.", "Springfield", "BT12345") },
+            {"bob.smith@example.com", new User("Alice Johnson", "bob.smith@example.com", "SecurePass456!", "555-987-6543", "456 Oak Ave.", "Riverdale", "UL67890")},
+            {"charlie.brown@example.com", new User("Charlie Brown", "charlie.brown@example.com", "Charlie789!", "555-456-7890", "789 Birch Ln.", "Greenville", "PO13579")},
+            {"diana.prince@example.com", new User("Diana Prince", "diana.prince@example.com", "Wonder123!", "555-321-6549", "321 Pine Dr.", "Metropolis", "MJ24680")},
+            {"ethan.hunt@example.com", new User("Ethan Hunt", "ethan.hunt@example.com", "MissionImpossible1!", "555-654-1239", "654 Elm Ct.", "Hill Valley", "DC11223")}
 
         };
 
@@ -57,11 +57,11 @@ namespace CaseLibrary.Data
 
         private static readonly Dictionary<string, BookableEvent> Events = new Dictionary<string, BookableEvent>()
         {
-            { "1102", new BookableEvent("1102","Conference", "30/6/2024", "2 hours") },
-            { "1249", new BookableEvent("1249", "Workshop", "20/2/2025", "3 hours") },
-            { "1437", new BookableEvent("1437", "Webinar", "9/5/2024", "1 hour") },
-            { "1675", new BookableEvent("1675", "Networking", "14/1/2025", "4 hours") },
-            { "1923", new BookableEvent("1923", "Seminar", "16/11/2024", "2 hours") },
+            { "CD1102", new BookableEvent("CD1102","Conference", "30/6/2024", "2 hours") },
+            { "AD1249", new BookableEvent("AD1249", "Workshop", "20/2/2025", "3 hours") },
+            { "LM1437", new BookableEvent("LM1437", "Webinar", "9/5/2024", "1 hour") },
+            { "OP1675", new BookableEvent("OP1675", "Networking", "14/1/2025", "4 hours") },
+            { "DL1923", new BookableEvent("DL1923", "Seminar", "16/11/2024", "2 hours") },
         };
 
 

@@ -2,3 +2,30 @@
 @model EksamenRazorPageFixed.Pages.BookableEventsModel
 @{
 }
+
+<!--Show All Boats-->
+<div class="row">
+    <h3 class="accordion-body text-center">Events</h3>
+    @foreach (var Event in Model.BookableEvents.Values)
+    {
+        var imagePath = "/Images/EventImages/" + Event.EventId + ".jpg";
+
+        <div class="col-lg-4 card" style="width: 16rem;">
+            <img src="@imagePath" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@Event.EventName</h5>
+                <p class="card-text">@Event.Duration</p>
+                <p class="card-text">@Event.Date</p>
+                
+                @if(Event.AssignedMembers.Count>0)
+                    {
+                    <h5 class="card-text">Assigned Members</h5>
+                     @foreach(var user in Event.AssignedMembers.Values)
+                     {
+                    <p class="card-text">@user.Name</p>
+                    }
+                    }
+            </div>
+        </div>
+    }
+</div>

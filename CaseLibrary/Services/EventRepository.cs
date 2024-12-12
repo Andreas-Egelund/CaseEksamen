@@ -1,4 +1,5 @@
-﻿using CaseLibrary.Entities;
+﻿using CaseLibrary.Data;
+using CaseLibrary.Entities;
 using CaseLibrary.interfaces;
 using CaseLibrary.Models;
 using System;
@@ -11,7 +12,13 @@ namespace CaseLibrary.Services
 {
     public class EventRepository : IEventRepository
     {
-        private Dictionary <string, BookableEvent> _eventRepository = new Dictionary<string, BookableEvent> ();
+        private Dictionary <string, BookableEvent> _eventRepository;
+
+
+        public EventRepository()
+        {
+            _eventRepository = MockData.GetAllEvents();
+        }
 
         public void AddEvent(string eventId, BookableEvent bookableEvent)
         {

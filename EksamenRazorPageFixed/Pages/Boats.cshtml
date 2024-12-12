@@ -2,3 +2,23 @@
 @model EksamenRazorPageFixed.Pages.BoatsModel
 @{
 }
+<!--Show All Events-->
+<div class="row">
+    <h3 class="accordion-body text-center">Our Events</h3>
+    @foreach (var boat in Model.Boats.Values)
+    {
+        var imagePath = "/Images/BoatsImages/" + boat.BoatNumber + ".jpg";
+
+        <div class="col-lg-4 card" style="width: 16rem;">
+            <img src="@imagePath" class="card-img-top" alt="...">  
+            <div class="card-body">
+                <h5 class="card-title">@boat.Name</h5>
+                <p class="card-text">@boat.BoatNumber</p>
+                <p class="card-text">@boat.LastMaintenance</p>
+                <p class="card-text">@boat.Measurements</p>
+
+
+            </div>
+        </div>
+    }
+</div>
