@@ -1,0 +1,114 @@
+﻿@page
+@model EksamenRazorPageFixed.Pages.SortingBoatsModel
+@{
+}
+
+
+<h1>List of Boats</h1>
+@{
+    var boatRowCount = 0;
+}
+
+
+
+
+<div>
+    <form method="post">
+        <button type="submit" class="btn btn-primary" asp-page-handler="SortBoats">Sort</button>
+    </form>
+</div>
+
+
+
+@if(Model.IsSorted ==false)
+{
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Model</th>
+            <th scope="col">Measurements</th>
+            <th scope="col">Year of Construction</th>
+            <th scope="col">Needs Repair</th>
+            <th scope="col">Last Repair</th>
+            <th scope="col">Last Maintenance</th>
+        </tr>
+    </thead>
+
+    @foreach (var boat in Model.Boats.Values)
+    {
+
+        boatRowCount++;
+
+
+        <tbody>
+            <tr>
+                <th scope="row">@boatRowCount</th>
+                <td>@boat.Name</td>
+                <td>@boat.Model</td>
+                <td>@boat.Measurements</td>
+                <td>@boat.YearOfConstruction</td>
+                <td>@boat.NeedsRepair</td>
+                <td>@boat.LastRepair</td>
+                <td>@boat.LastMaintenance</td>
+            </tr>
+            <tr>
+        </tbody>
+
+    }
+</table>
+
+}
+
+
+
+
+else if(Model.IsSorted == true)
+{
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Model</th>
+            <th scope="col">Measurements</th>
+            <th scope="col">Year of Construction</th>
+            <th scope="col">Needs Repair</th>
+            <th scope="col">Last Repair</th>
+            <th scope="col">Last Maintenance</th>
+        </tr>
+    </thead>
+
+    @foreach (var boat in Model.SortedBoats)
+    {
+
+        boatRowCount++;
+
+
+        <tbody>
+            <tr>
+                <th scope="row">@boatRowCount</th>
+                <td>@boat.Name</td>
+                <td>@boat.Model</td>
+                <td>@boat.Measurements</td>
+                <td>@boat.YearOfConstruction</td>
+                <td>@boat.NeedsRepair</td>
+                <td>@boat.LastRepair</td>
+                <td>@boat.LastMaintenance</td>
+            </tr>
+            <tr>
+        </tbody>
+
+    }
+    </table>
+}
+else
+{
+    
+}
