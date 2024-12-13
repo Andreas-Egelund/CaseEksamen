@@ -1,0 +1,42 @@
+﻿@page
+@model EksamenRazorPageFixed.Pages.SubPage.UserInfoPageModel
+@{
+    var currentUserMail = TempData["CurrentUserMail"] as string;
+
+}
+
+
+<p>
+    <h3 class="fw-light">
+        <b class="fw-bold">Name:</b>  @Model.Members[currentUserMail].Name
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">Email:</b>  @Model.Members[currentUserMail].Email
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">PhoneNumber:</b>  @Model.Members[currentUserMail].Phone
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">City:</b>  @Model.Members[currentUserMail].City
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">ZipCode:</b>  @Model.Members[currentUserMail].ZipCode
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">Adress:</b>  @Model.Members[currentUserMail].Adress
+    </h3>
+    
+    
+</p>
+
+
+
+
+
+
+

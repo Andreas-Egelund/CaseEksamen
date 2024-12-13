@@ -8,16 +8,20 @@
     <h3 class="accordion-body text-center">Our Members</h3>
     @foreach (var member in Model.Members.Values)
     {
-        var imagePath = "/Images/EventImages/" + member.Email + ".jpg";
 
         <div class="col-lg-4 card" style="width: 16rem;">
-            <img src="@imagePath" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">@member.Name</h5>
                 <p class="card-text">@member.Adress</p>
                 <p class="card-text">@member.City</p>
+                <div>
+                    <form method="post">
+                        <button type="submit" class="btn btn-primary" name="mail" value="@member.Email" asp-page-handler="GetCurrentUserByButton">UserInfo</button>
+                    </form>
+                </div>
             </div>
         </div>
+ 
     }
 </div>
 
