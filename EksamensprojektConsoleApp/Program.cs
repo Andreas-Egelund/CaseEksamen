@@ -13,18 +13,28 @@ BookingRepository bookingRepo = new BookingRepository();
 
 
 
-
 boatRepo.GetBoatBySailNumber("SB005").NeedsRepair = "The Front fell off";
 
-Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
+//Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
+
+Console.WriteLine(boatRepo.GetBoatBySailNumber("SB005"));
+
+boatRepo.GetBoatBySailNumber("SB005").Fixboat();
+
+
+Console.WriteLine(boatRepo.GetBoatBySailNumber("SB005"));
 
 
 
+
+
+
+/*
 userRepo.GetUserByEmail("alice.johnson@example.com").AssignBookingToUser(bookingRepo.GetBookingById("BK003"));
 userRepo.GetUserByEmail("alice.johnson@example.com").AssignBookingToUser(bookingRepo.GetBookingById("BK001"));
 Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
 
-
+*/
 
 
 

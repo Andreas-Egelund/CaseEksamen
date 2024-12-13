@@ -12,7 +12,7 @@ namespace CaseLibrary.Models
 {
     public class Blog
     {
-
+        private static int _nextid = 0;
 
         public string BlogTitel { get; set; }
         public User Author { get; set; }
@@ -21,13 +21,14 @@ namespace CaseLibrary.Models
         public string BlogId {  get; set; }
 
 
-        public Blog(string blogId,string blogTitel, User author, string bodyText, string date)
+        public Blog(string blogTitel, User author, string bodyText, string date)
         {
             BlogTitel = blogTitel;
             Author = author;
             BodyText = bodyText;
             Date = date;
-            BlogId = blogId; 
+            _nextid++;
+            BlogId = $"BL00{_nextid}"; 
             
         }
 

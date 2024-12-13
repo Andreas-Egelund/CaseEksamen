@@ -10,12 +10,12 @@ namespace CaseLibrary.Entities
     public class User
     {
 
-
+        
 
 
         public string Name { get; set; }
         public string Email { get; set; }
-        private string Password { get; }
+        public string Password { get; }
         public string Phone { get; set; }
         public string Adress { get; set; }
         public string City { get; set; }
@@ -86,18 +86,6 @@ namespace CaseLibrary.Entities
         {
             AssignedEvents.TryAdd(bookableEvent.EventId, bookableEvent);
         }
-
-
-        public string PrintAllAssignedBookings()
-        {
-            foreach (Booking booking in AssignedBookings.Values)
-            {
-                return $"{booking}";
-            }
-            return null;
-        }
-
-
 
 
 

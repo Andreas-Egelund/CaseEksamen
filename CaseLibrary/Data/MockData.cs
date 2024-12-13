@@ -3,6 +3,7 @@ using CaseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,11 +81,11 @@ namespace CaseLibrary.Data
 
         private static readonly Dictionary<string, Blog> Blogs = new Dictionary<string, Blog>()
         {
-        { "BL001", new Blog("BL001","The Rise of AI", Users["alice.johnson@example.com"], "Exploring the impact of AI on society.", "2024-12-01") },
-        { "BL002", new Blog("BL002","Healthy Eating Tips", Users["bob.smith@example.com"], "Simple ways to improve your diet.", "2024-11-25") },
-        { "BL003", new Blog("BL003","Traveling on a Budget", Users["charlie.brown@example.com"], "Tips for affordable and enjoyable travel.", "2024-12-03") },
-        { "BL004", new Blog("BL004","Mastering C# Programming", Users["diana.prince@example.com"], "A comprehensive guide to learning C#.", "2024-12-05") },
-        { "BL005", new Blog("BL005","The Future of Renewable Energy", Users["ethan.hunt@example.com"], "How renewable energy is shaping the world.", "2024-11-20") }
+        { "BL001", new Blog("The Rise of AI", Users["alice.johnson@example.com"], "Exploring the impact of AI on society.", "2024-12-01") },
+        { "BL002", new Blog("Healthy Eating Tips", Users["bob.smith@example.com"], "Simple ways to improve your diet.", "2024-11-25") },
+        { "BL003", new Blog("Traveling on a Budget", Users["charlie.brown@example.com"], "Tips for affordable and enjoyable travel.", "2024-12-03") },
+        { "BL004", new Blog("Mastering C# Programming", Users["diana.prince@example.com"], "A comprehensive guide to learning C#.", "2024-12-05") },
+        { "BL005", new Blog("The Future of Renewable Energy", Users["ethan.hunt@example.com"], "How renewable energy is shaping the world.", "2024-11-20") }
         };
 
 

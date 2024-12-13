@@ -2,3 +2,344 @@
 @model EksamenRazorPageFixed.Pages.AdminModel
 @{
 }
+
+<div class="container">
+    <div class="row">
+        <!-- RowBoat Form -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Add RowBoat</h1>
+                    <form method="post">
+                        <div class="mb-3">
+                            <label class="form-label">BoatNumber</label>
+                            <input type="text" class="form-control" name="boatNumber" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Model</label>
+                            <input type="text" class="form-control" name="model" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Total Length</label>
+                            <input type="text" class="form-control" name="measure" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Year of construction</label>
+                            <input type="text" class="form-control" name="yearOfConstruction" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Part that Needs repair</label>
+                            <input type="text" class="form-control" name="needsRepair" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Repair date</label>
+                            <input type="text" class="form-control" name="lastRepair" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Maintenance date</label>
+                            <input type="text" class="form-control" name="lastMaintenance" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Wood Grain</label>
+                            <input type="text" class="form-control" name="woodGrain" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" asp-page-handler="AddRowBoat">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- SailBoat Form -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Add SailBoat</h1>
+                    <form method="post">
+                        <div class="mb-3">
+                            <label class="form-label">BoatNumber</label>
+                            <input type="text" class="form-control" name="boatNumber" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Model</label>
+                            <input type="text" class="form-control" name="model" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Total Length</label>
+                            <input type="text" class="form-control" name="measure" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Year of construction</label>
+                            <input type="text" class="form-control" name="yearOfConstruction" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Part that Needs repair</label>
+                            <input type="text" class="form-control" name="needsRepair" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Repair date</label>
+                            <input type="text" class="form-control" name="lastRepair" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Maintenance date</label>
+                            <input type="text" class="form-control" name="lastMaintenance" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Sail Material</label>
+                            <input type="text" class="form-control" name="sailMaterial" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" asp-page-handler="AddSailBoat">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MotorBoat Form -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Add MotorBoat</h1>
+                    <form method="post">
+                        <div class="mb-3">
+                            <label class="form-label">BoatNumber</label>
+                            <input type="text" class="form-control" name="boatNumber" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Model</label>
+                            <input type="text" class="form-control" name="model" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Total Length</label>
+                            <input type="text" class="form-control" name="measure" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Year of construction</label>
+                            <input type="text" class="form-control" name="yearOfConstruction" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Part that Needs repair</label>
+                            <input type="text" class="form-control" name="needsRepair" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Repair date</label>
+                            <input type="text" class="form-control" name="lastRepair" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Maintenance date</label>
+                            <input type="text" class="form-control" name="lastMaintenance" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" asp-page-handler="AddMotorBoat">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<h1>Add User Feature</h1>
+
+<div class="col-12">
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="col-sm-1 col-form-label">Name</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="name" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="col-sm-1 col-form-label">Email</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="email" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="col-sm-1 col-form-label">Password</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="password" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="col-sm-1 col-form-label">Phone</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="phone" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="col-sm-1 col-form-label">Adress</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="address" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="col-sm-1 col-form-label">City</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="city" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="col-sm-1 col-form-label">ZipCode</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="zipCode" />
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" asp-page-handler="AddUser">Save</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<h1>User Editor</h1>
+@{var userRowCount = 0;}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Adress</th>
+            <th scope="col">City</th>
+            <th scope="col">ZipCode</th>
+        </tr>
+    </thead>
+
+@foreach (var user in Model.Users.Values)
+{
+
+        userRowCount++;
+        
+
+        <tbody>
+            <tr>
+                <th scope="row">@userRowCount</th>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Password</td>
+                <td>@user.Phone</td>
+                <td>@user.Adress</td>
+                <td>@user.City</td>
+                <td>@user.ZipCode</td>
+                </tr>
+            <tr>
+        </tbody>
+    
+}
+</table>
+
+
+<h1>Boat Editor</h1>
+@{
+    var boatRowCount = 0;
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Model</th>
+            <th scope="col">Measurements</th>
+            <th scope="col">Year of Construction</th>
+            <th scope="col">Needs Repair</th>
+            <th scope="col">Last Repair</th>
+            <th scope="col">Last Maintenance</th>
+        </tr>
+    </thead>
+
+    @foreach (var boat in Model.Boats.Values)
+    {
+
+        boatRowCount++;
+
+
+        <tbody>
+            <tr>
+                <th scope="row">@boatRowCount</th>
+                <td>@boat.Name</td>
+                <td>@boat.Model</td>
+                <td>@boat.Measurements</td>
+                <td>@boat.YearOfConstruction</td>
+                <td>@boat.NeedsRepair</td>
+                <td>@boat.LastRepair</td>
+                <td>@boat.LastMaintenance</td>
+            </tr>
+            <tr>
+        </tbody>
+
+    }
+</table>
+
+
+
+
+
+
+
+<h1>Event Editor</h1>
+@{
+    var eventRowCount = 0;
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Date of Event</th>
+            <th scope="col">Duration of Event</th>
+        </tr>
+    </thead>
+
+    @foreach (var bookableEvent in Model.BookableEvents.Values)
+    {
+
+        eventRowCount++;
+
+
+        <tbody>
+            <tr>
+                <th scope="row">@eventRowCount</th>
+                <td>@bookableEvent.EventName</td>
+                <td>@bookableEvent.Date</td>
+                <td>@bookableEvent.Duration</td>
+            </tr>
+            <tr>
+        </tbody>
+
+    }
+</table>
+

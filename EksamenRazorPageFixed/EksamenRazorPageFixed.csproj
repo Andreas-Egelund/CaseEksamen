@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\SubPage\" />
     <Folder Include="wwwroot\Images\MembersImages\" />
     <Folder Include="wwwroot\Images\EventImages\" />
     <Folder Include="wwwroot\Images\FrontPageImages\" />
