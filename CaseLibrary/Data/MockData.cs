@@ -58,11 +58,11 @@ namespace CaseLibrary.Data
 
         private static readonly Dictionary<string, BookableEvent> Events = new Dictionary<string, BookableEvent>()
         {
-            { "CD1102", new BookableEvent("CD1102","Conference", "30/6/2024", "2 hours") },
-            { "AD1249", new BookableEvent("AD1249", "Workshop", "20/2/2025", "3 hours") },
-            { "LM1437", new BookableEvent("LM1437", "Webinar", "9/5/2024", "1 hour") },
-            { "OP1675", new BookableEvent("OP1675", "Networking", "14/1/2025", "4 hours") },
-            { "DL1923", new BookableEvent("DL1923", "Seminar", "16/11/2024", "2 hours") },
+            { "BE-Id-101", new BookableEvent("Conference", "30/6/2024", "2 hours") },
+            { "BE-Id-102", new BookableEvent("Workshop", "20/2/2025", "3 hours") },
+            { "BE-Id-103", new BookableEvent("Webinar", "9/5/2024", "1 hour") },
+            { "BE-Id-104", new BookableEvent("Networking", "14/1/2025", "4 hours") },
+            { "BE-Id-105", new BookableEvent("Seminar", "16/11/2024", "2 hours") },
         };
 
 

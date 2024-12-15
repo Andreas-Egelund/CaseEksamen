@@ -19,7 +19,6 @@ namespace CaseLibrary.Models
         public string Location { get; set; }
 
 
-
         public Booking(Boat boatBooked, string date, string duration, string location)
         {
             _nextId++;
@@ -28,6 +27,7 @@ namespace CaseLibrary.Models
             Date = date;
             Duration = duration;
             Location = location;
+            
         }
 
 

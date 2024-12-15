@@ -11,6 +11,7 @@ namespace EksamenRazorPageFixed.Pages.SubPage
     {
         public Dictionary<string, User> Members { get; set; }
         public Dictionary<string, Boat> Boats { get; set; }
+        public Dictionary<string, BookableEvent> BookableEvents { get; set; }
         public string ErrorMessage { get; set; }
 
 
@@ -19,11 +20,11 @@ namespace EksamenRazorPageFixed.Pages.SubPage
         public string CurrentUser { get; set; }
 
 
-        public UserInfoPageModel(UserRepository userRepo, BoatRepository boatRepo, BookingRepository bookingRepo)
+        public UserInfoPageModel(UserRepository userRepo, BoatRepository boatRepo, BookingRepository bookingRepo, EventRepository bookableEventsRepo)
         {
             Members = userRepo.GetAllUsers();
             Boats = boatRepo.GetAllBoats();
-             
+            BookableEvents = bookableEventsRepo.GetAllEvents();
 
         }
 
@@ -38,7 +39,6 @@ namespace EksamenRazorPageFixed.Pages.SubPage
         {
             try
             {
-
                 Booking newBooking = new Booking(Boats[boatNumber], date, duration, location);
                 CurrentUser = TempData["CurrentUserMail"] as string;
 
@@ -46,14 +46,29 @@ namespace EksamenRazorPageFixed.Pages.SubPage
             }
             catch (Exception ex)
             {
-                
+
                 ErrorMessage = ex.Message;
             }
-
-
         }
 
 
 
+        public void OnPostRegisterForEvent2(string eventID)
+        {
+
+            try
+            {
+                CurrentUser = TempData["CurrentUserMail"] as string;
+                Members[CurrentUser].AssignedEvents.TryAdd(BookableEvents[eventID].EventId, BookableEvents[eventID]);
+
+                BookableEvents[eventID].AssignedMembers.TryAdd(Members[CurrentUser].Email, Members[CurrentUser]);
+
+            }
+            catch (Exception ex)
+            {
+
+                ErrorMessage = ex.Message;
+            }
+        }
     }
 }

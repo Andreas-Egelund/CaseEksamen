@@ -93,6 +93,51 @@ else
 
 
 
+<div class="card">
+    <h1>All Assigned Events</h1>
+
+    @{
+        var assignedEventsRowCount = 0;
+    }
+
+    @if (Model.Members[currentUserMail].AssignedEvents.Count < 1)
+    {
+        <h3 class="fw-lighter">This User is not signed up for any events</h3>
+    }
+    else
+    {
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Event-Id</th>
+                    <th scope="col">Event Name</th>
+                    <th scope="col">Date of Event</th>
+                    <th scope="col">Duration of Event</th>
+                </tr>
+            </thead>
+
+            @foreach (var bookableEvent in Model.Members[currentUserMail].AssignedEvents.Values)
+            {
+
+                assignedEventsRowCount++;
+
+
+                <tbody>
+                    <tr>
+                        <th scope="row">@assignedEventsRowCount</th>
+                        <td>@bookableEvent.EventId</td>
+                        <td>@bookableEvent.EventName</td>
+                        <td>@bookableEvent.Date</td>
+                        <td>@bookableEvent.Duration</td>
+                    </tr>
+                    <tr>
+                </tbody>
+            }
+        </table>
+    }
+</div>
 
 
 
@@ -112,31 +157,85 @@ else
 
 
 
-
-<div class="col-md-4">
-    <div class="card">
-        <div class="card-body">
-            <h3 class="fw-lighter alert-danger" >@Model.ErrorMessage</h3>
-            <h1 class="card-title">Make a Booking</h1>
-            <form method="post">
-                <div class="mb-3">
-                    <label class="form-label">BoatNumber of boat being booked</label>
-                    <input type="text" class="form-control" name="boatNumber" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="fw-lighter alert-danger" >@Model.ErrorMessage</h3>
+                    <h1 class="card-title">Make a Booking</h1>
+                    <form method="post">
+                        <div class="mb-6">
+                            <label class="form-label">BoatNumber of boat being booked</label>
+                            <input type="text" class="form-control" name="boatNumber" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label">Date</label>
+                            <input type="text" class="form-control" name="date" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label">Duration</label>
+                            <input type="text" class="form-control" name="duration" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label">Location</label>
+                            <input type="text" class="form-control" name="location" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" asp-page-handler="CreateBooking">Create booking</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Date</label>
-                    <input type="text" class="form-control" name="date" />
+            </div>
+        </div>
+    
+
+    
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="fw-lighter alert-danger">@Model.ErrorMessage</h3>
+                    <h1 class="card-title">Register for Event</h1>
+                    <h2>All current Events</h2>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Event-Id</th>
+                                <th scope="col">Event Name</th>
+                                <th scope="col">Date of Event</th>
+                                <th scope="col">Duration of Event</th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var bookableEvent in Model.BookableEvents.Values)
+                        {
+
+                            assignedEventsRowCount++;
+
+
+                            <tbody>
+                                <tr>
+                                    <th scope="row">@assignedEventsRowCount</th>
+                                    <td>@bookableEvent.EventId</td>
+                                    <td>@bookableEvent.EventName</td>
+                                    <td>@bookableEvent.Date</td>
+                                    <td>@bookableEvent.Duration</td>
+                                </tr>
+                                <tr>
+                            </tbody>
+                        }
+                    </table>
+
+
+                    <form method="post">
+                        <div class="mb-6">
+                            <label class="form-label"><b class="fw-bold">Event ID</b> --- Please refer to the table above</label>
+                            <input type="text" class="form-control" name="eventID" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" asp-page-handler="RegisterForEvent2">Register For Event</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Duration</label>
-                    <input type="text" class="form-control" name="duration" />
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Location</label>
-                    <input type="text" class="form-control" name="location" />
-                </div>
-                <button type="submit" class="btn btn-primary" asp-page-handler="CreateBooking">Create booking</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

@@ -15,11 +15,12 @@
             <div class="card-body">
                 <h5 class="card-title">@Event.EventName</h5>
                 <p class="card-text">@Event.Duration</p>
+                <p class="card-text">EventId: @Event.EventId</p>
                 <p class="card-text">@Event.Date</p>
-                
+                <h5 class="card-text">Attendees: @Event.AssignedMembers.Count</h5>
                 @if(Event.AssignedMembers.Count>0)
                     {
-                    <h5 class="card-text">Assigned Members</h5>
+                    <h5 class="card-text">Assigned Members:</h5>
                      @foreach(var user in Event.AssignedMembers.Values)
                      {
                     <p class="card-text">@user.Name</p>

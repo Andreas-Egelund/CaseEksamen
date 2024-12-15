@@ -13,7 +13,7 @@ namespace CaseLibrary.Models
 {
     public class BookableEvent
     {
-
+        private static int _nextId = 100;
 
         public string EventId {  get; set; }
         public string EventName { get; set; }
@@ -24,9 +24,10 @@ namespace CaseLibrary.Models
 
 
 
-        public BookableEvent(string eventId, string eventName, string date, string duration)
+        public BookableEvent(string eventName, string date, string duration)
         {
-            EventId = eventId;
+            _nextId++;
+            EventId = $"BE-Id-{_nextId}";
             EventName = eventName;
             Date = date;
             Duration = duration;
