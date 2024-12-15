@@ -12,8 +12,10 @@
         <div class="col-lg-4 card" style="width: 16rem;">
             <div class="card-body">
                 <h5 class="card-title">@member.Name</h5>
-                <p class="card-text">@member.Adress</p>
+                <p class="card-text">@member.Address</p>
                 <p class="card-text">@member.City</p>
+                <p class="card-text">Number of bookings: @member.AssignedBookings.Count</p>
+                <p class="card-text">Number of Events: @member.AssignedEvents.Count</p>
                 <div>
                     <form method="post">
                         <button type="submit" class="btn btn-primary" name="mail" value="@member.Email" asp-page-handler="GetCurrentUserByButton">UserInfo</button>

@@ -65,7 +65,19 @@ namespace EksamenRazorPageFixed.Pages
 
         }
 
+        public void OnPostUpdateUser(string EditedUserEmail)
+        {
 
+                Users[EditedUserEmail].Name = Request.Form[$"Users[{EditedUserEmail}].Name"];
+                Users[EditedUserEmail].Email = Request.Form[$"Users[{EditedUserEmail}].Email"];
+                Users[EditedUserEmail].Password = Request.Form[$"Users[{EditedUserEmail}].Password"];
+                Users[EditedUserEmail].Phone = Request.Form[$"Users[{EditedUserEmail}].Phone"];
+                Users[EditedUserEmail].Address = Request.Form[$"Users[{EditedUserEmail}].Address"];
+                Users[EditedUserEmail].City = Request.Form[$"Users[{EditedUserEmail}].City"];
+                Users[EditedUserEmail].ZipCode = Request.Form[$"Users[{EditedUserEmail}].ZipCode"];
+
+
+        }
 
 
 

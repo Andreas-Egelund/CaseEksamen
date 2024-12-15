@@ -21,9 +21,9 @@ namespace CaseLibrary.Services
             _bookings = MockData.GetBookings();
         }
 
-        public void AddBooking(string bookingId, Booking booking)
+        public void AddBooking(Booking booking)
         {
-            _bookings.TryAdd(bookingId, booking);
+            _bookings.TryAdd(booking.BookingId, booking);
         }
 
         public void DeleteBookingById(string bookingId)

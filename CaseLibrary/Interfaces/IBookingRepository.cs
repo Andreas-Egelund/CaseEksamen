@@ -11,7 +11,7 @@ namespace CaseLibrary.interfaces
     public interface IBookingRepository
     {
 
-        void AddBooking(string bookingId, Booking booking);
+        void AddBooking(Booking booking);
 
         Dictionary<string, Booking> GetAllBooking();
 

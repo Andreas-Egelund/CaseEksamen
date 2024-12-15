@@ -2,7 +2,7 @@
 @model EksamenRazorPageFixed.Pages.SubPage.UserInfoPageModel
 @{
     var currentUserMail = TempData["CurrentUserMail"] as string;
-
+    TempData.Keep("CurrentUserMail"); //Keeps the value of Mail so that we may access this value throught our entire application
 }
 
 
@@ -28,7 +28,7 @@
     </h3>
 
     <h3 class="fw-light">
-        <b class="fw-bold">Adress:</b>  @Model.Members[currentUserMail].Adress
+        <b class="fw-bold">Adress:</b>  @Model.Members[currentUserMail].Address
     </h3>
     
     
@@ -40,3 +40,103 @@
 
 
 
+
+<div class="card">
+<h1>All Assigned bookings</h1>
+
+@{
+    var assignedbookingsRowCount = 0;
+}
+
+@if(Model.Members[currentUserMail].AssignedBookings.Count < 1)
+{
+    <h3 class ="fw-lighter">This User has no bookings</h3>
+}
+else
+{
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Booking-Id</th>
+            <th scope="col">Boatnumber of booked boat</th>
+            <th scope="col">Date</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Location</th>
+        </tr>
+    </thead>
+
+    @foreach (var booking in Model.Members[currentUserMail].AssignedBookings.Values)
+    {
+
+        assignedbookingsRowCount++;
+
+
+        <tbody>
+            <tr>
+                <th scope="row">@assignedbookingsRowCount</th>
+                <td>@booking.BookingId</td>
+                <td>@booking.BoatBooked.BoatNumber</td>
+                <td>@booking.Date</td>
+                <td>@booking.Duration</td>
+                <td>@booking.Location</td>
+
+            </tr>
+            <tr>
+        </tbody>
+
+    }
+</table>
+}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-4">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="fw-lighter alert-danger" >@Model.ErrorMessage</h3>
+            <h1 class="card-title">Make a Booking</h1>
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">BoatNumber of boat being booked</label>
+                    <input type="text" class="form-control" name="boatNumber" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input type="text" class="form-control" name="date" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Duration</label>
+                    <input type="text" class="form-control" name="duration" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-control" name="location" />
+                </div>
+                <button type="submit" class="btn btn-primary" asp-page-handler="CreateBooking">Create booking</button>
+            </form>
+        </div>
+    </div>
+</div>

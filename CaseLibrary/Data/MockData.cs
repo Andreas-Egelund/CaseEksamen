@@ -71,22 +71,14 @@ namespace CaseLibrary.Data
         private static readonly Dictionary<string, Booking> Bookings = new Dictionary<string, Booking>()
         {
 
-            {"BK001", new Booking("BK001", Boats["RB004"], "25/03/2024", "2 hours", "Location") },
-            {"BK002", new Booking("BK002", Boats["MB004"], "20/02/2024", "4 hours", "Riverdale Harbor")},
-            {"BK003", new Booking("BK003", Boats["SB005"], "10/03/2024", "1 day", "Lakeview Dock")},
-            {"BK004", new Booking("BK004", Boats["SB001"], "25/03/2024", "3 hours", "Seaside Bay")},
-            {"BK005", new Booking("BK005", Boats["MB003"], "01/04/2024", "6 hours", "Greenville Port")}
+            {"BK-Id-101", new Booking(Boats["RB004"], "25/03/2024", "2 hours", "Location") },
+            {"BK-Id-102", new Booking(Boats["MB004"], "20/02/2024", "4 hours", "Riverdale Harbor")},
+            {"BK-Id-103", new Booking(Boats["SB005"], "10/03/2024", "1 day", "Lakeview Dock")},
+            {"BK-Id-104", new Booking(Boats["SB001"], "25/03/2024", "3 hours", "Seaside Bay")},
+            {"BK-Id-105", new Booking(Boats["MB003"], "01/04/2024", "6 hours", "Greenville Port")}
 
         };
 
-        private static readonly Dictionary<string, Blog> Blogs = new Dictionary<string, Blog>()
-        {
-        { "BL001", new Blog("The Rise of AI", Users["alice.johnson@example.com"], "Exploring the impact of AI on society.", "2024-12-01") },
-        { "BL002", new Blog("Healthy Eating Tips", Users["bob.smith@example.com"], "Simple ways to improve your diet.", "2024-11-25") },
-        { "BL003", new Blog("Traveling on a Budget", Users["charlie.brown@example.com"], "Tips for affordable and enjoyable travel.", "2024-12-03") },
-        { "BL004", new Blog("Mastering C# Programming", Users["diana.prince@example.com"], "A comprehensive guide to learning C#.", "2024-12-05") },
-        { "BL005", new Blog("The Future of Renewable Energy", Users["ethan.hunt@example.com"], "How renewable energy is shaping the world.", "2024-11-20") }
-        };
 
 
 
@@ -101,5 +93,20 @@ namespace CaseLibrary.Data
         public static Dictionary<string, User> GetUsers() { return Users; }
 
         public static Dictionary<string, Blog> GetBlogs() { return Blogs; }
+
+
+
+
+        private static readonly Dictionary<string, Blog> Blogs = new Dictionary<string, Blog>()
+        {
+        { "BL001", new Blog("The Rise of AI", Users["alice.johnson@example.com"], "Exploring the impact of AI on society.", "2024-12-01") },
+        { "BL002", new Blog("Healthy Eating Tips", Users["bob.smith@example.com"], "Simple ways to improve your diet.", "2024-11-25") },
+        { "BL003", new Blog("Traveling on a Budget", Users["charlie.brown@example.com"], "Tips for affordable and enjoyable travel.", "2024-12-03") },
+        { "BL004", new Blog("Mastering C# Programming", Users["diana.prince@example.com"], "A comprehensive guide to learning C#.", "2024-12-05") },
+        { "BL005", new Blog("The Future of Renewable Energy", Users["ethan.hunt@example.com"], "How renewable energy is shaping the world.", "2024-11-20") }
+        };
+
+
+
     }
 }

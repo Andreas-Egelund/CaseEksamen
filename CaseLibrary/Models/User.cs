@@ -15,9 +15,9 @@ namespace CaseLibrary.Entities
 
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Password { get; }
+        public string Password { get; set; }
         public string Phone { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
         public Dictionary<string, Booking> AssignedBookings{ get; set; }
@@ -31,7 +31,7 @@ namespace CaseLibrary.Entities
             Email = email;
             Password = password;
             Phone = phone;
-            Adress = address;
+            Address = address;
             City = city;
             ZipCode = zipCode;
             AssignedBookings = new Dictionary<string, Booking>();
@@ -59,7 +59,7 @@ namespace CaseLibrary.Entities
                 $"Name: {Name}\n" +
                 $"Email: {Email}\n" +
                 $"Phonenumber: {Phone}\n" +
-                $"Adress: {Adress}\n" +
+                $"Adress: {Address}\n" +
                 $"City: {City}\n" +
                 $"Zipcode: {ZipCode}\n" +
                 $"Bookings assigned to user: \n{string.Join("\n",AssignedBookings.Values)}\n";
@@ -71,7 +71,7 @@ namespace CaseLibrary.Entities
                     $"Name: {Name}\n" +
                     $"Email: {Email}\n" +
                     $"Phonenumber: {Phone}\n" +
-                    $"Adress: {Adress}\n" +
+                    $"Adress: {Address}\n" +
                     $"City: {City}\n" +
                     $"Zipcode: {ZipCode}\n";
             }

@@ -216,47 +216,107 @@
 
 
 
-
-
+@{
+    var userRowCountchat = 0;
+}
 
 <h1>User Editor</h1>
-@{var userRowCount = 0;}
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Adress</th>
-            <th scope="col">City</th>
-            <th scope="col">ZipCode</th>
-        </tr>
-    </thead>
 
-@foreach (var user in Model.Users.Values)
-{
-
-        userRowCount++;
-        
-
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">ZipCode</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
         <tbody>
-            <tr>
-                <th scope="row">@userRowCount</th>
-                <td>@user.Name</td>
-                <td>@user.Email</td>
-                <td>@user.Password</td>
-                <td>@user.Phone</td>
-                <td>@user.Adress</td>
-                <td>@user.City</td>
-                <td>@user.ZipCode</td>
+            @foreach (var user in Model.Users.Values)
+            {
+                userRowCountchat++;
+                <tr>
+                    <th scope="row">@userRowCountchat</th>
+                    <td>
+                        <input type="text" name="Users[@user.Email].Name" value="@user.Name" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="email" name="Users[@user.Email].Email" value="@user.Email" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="password" name="Users[@user.Email].Password" value="@user.Password" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" name="Users[@user.Email].Phone" value="@user.Phone" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" name="Users[@user.Email].Address" value="@user.Address" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" name="Users[@user.Email].City" value="@user.City" class="form-control" />
+                    </td>
+                    <td>
+                        <input type="text" name="Users[@user.Email].ZipCode" value="@user.ZipCode" class="form-control" />
+                    </td>
+                    <td>
+                        <button type="submit" name="EditedUserEmail" value="@user.Email" class="btn btn-primary" asp-page-handler="UpdateUser">Save</button>
+                    </td>
                 </tr>
-            <tr>
+            }
         </tbody>
-    
-}
-</table>
+    </table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <h1>Boat Editor</h1>

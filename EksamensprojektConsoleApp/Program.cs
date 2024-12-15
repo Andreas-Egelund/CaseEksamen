@@ -13,18 +13,22 @@ BookingRepository bookingRepo = new BookingRepository();
 
 
 
-boatRepo.GetBoatBySailNumber("SB005").NeedsRepair = "The Front fell off";
+foreach(Booking booking in bookingRepo.GetAllBooking().Values)
+{
+    Console.WriteLine(booking);
+}
 
-//Console.WriteLine(userRepo.GetUserByEmail("alice.johnson@example.com"));
+Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");
 
-Console.WriteLine(boatRepo.GetBoatBySailNumber("SB005"));
+Booking bookingtest = new Booking(boatRepo.GetBoatBySailNumber("RB004"),DateTime.Now.ToString(),"99hours","præstø");
 
-boatRepo.GetBoatBySailNumber("SB005").Fixboat();
-
-
-Console.WriteLine(boatRepo.GetBoatBySailNumber("SB005"));
+bookingRepo.AddBooking(bookingtest);
 
 
+foreach (Booking booking in bookingRepo.GetAllBooking().Values)
+{
+    Console.WriteLine(booking);
+}
 
 
 
