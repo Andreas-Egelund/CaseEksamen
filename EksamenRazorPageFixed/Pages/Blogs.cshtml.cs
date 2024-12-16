@@ -17,5 +17,17 @@ namespace EksamenRazorPageFixed.Pages
         public void OnGet()
         {
         }
+
+
+        public IActionResult OnPostGetBlogsByButton(string Id)
+        {
+
+            TempData["BlogId"] = Id;
+            return RedirectToPage("BlogPage/BlogInfoPage");
+
+        }
+
+
+
     }
 }

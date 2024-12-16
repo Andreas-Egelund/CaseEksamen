@@ -219,6 +219,19 @@ namespace EksamenRazorPageFixed.Pages
 
 
 
+        public IActionResult OnPostCreatingBlog(string Blogid)
+        {
+            TempData["BlogsId"] = Blogid;
+            return RedirectToPage("BlogPage/CreatingBlogs");
+        }
+
+
+
+
+
+
+
+
 
     }
 }

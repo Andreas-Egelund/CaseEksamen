@@ -1,0 +1,64 @@
+﻿@page
+@model EksamenRazorPageFixed.Pages.BlogPage.CreatingBlogsModel
+
+@{
+
+    var Bloggen = TempData["BlogsId"] as string;
+}
+
+
+
+
+
+
+<h3 class="alert-danger">@Model.ErrorMessage</h3>
+<div class="card mb-3">
+    <div class="card-header">
+        <strong>Blog Content</strong>
+    </div>
+    <div class="card-body">
+        <form method="post">
+
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <strong>Blog Information</strong>
+                </div>
+
+
+                <div class="card-body">
+                    <div>
+                        <strong>Blog Title:</strong>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" />
+                        </div>
+                    </div>
+                    <div>
+                        <strong>Date:</strong>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Date" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong>Author mail:</strong>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="authorMail" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="mb-3">
+                <label for="blogContent" class="form-label">Content:</label>
+                <textarea id="blogContent" name="BodyText" class="form-control" rows="8"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" asp-page-handler="AddBlog">Save</button>
+        </form>
+    </div>
+</div>

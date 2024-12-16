@@ -1,0 +1,26 @@
+﻿@page
+@model EksamenRazorPageFixed.Pages.BlogPage.BlogInfoPageModel
+
+@{
+    var BlogIds = TempData["BlogId"] as string;
+
+}
+
+
+<p>
+    <h3 class="fw-light">
+        <b class="fw-bold">Titel:</b>  @Model.Blogs[BlogIds].BlogTitel
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">Date:</b>  @Model.Blogs[BlogIds].Date
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">Author:</b>  @Model.Blogs[BlogIds].Author.Name
+    </h3>
+
+    <h3 class="fw-light">
+        <b class="fw-bold">Summary:<br></b>  @Model.Blogs[BlogIds].BodyText
+    </h3>
+</p>

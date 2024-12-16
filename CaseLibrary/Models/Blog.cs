@@ -32,7 +32,7 @@ namespace CaseLibrary.Models
             
         }
 
-        public virtual string ToString()
+        public override string ToString()
         {
             return $"---------------------------------------\n" +
                 $"BlogTitel: {BlogTitel}\n" +
