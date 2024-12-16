@@ -122,7 +122,13 @@ namespace EksamenRazorPageFixed.Pages
         {
             try
             {
+                foreach (var bookableEvents in Users[EditedUserEmail].AssignedEvents.Values)
+                {
+                    bookableEvents.AssignedMembers.Remove(EditedUserEmail);
+                }
+
                 Users.Remove(EditedUserEmail);
+                
             }
             catch(Exception ex)
             {
