@@ -1,5 +1,6 @@
 ﻿using CaseLibrary.Entities;
 using CaseLibrary.Models;
+using CaseLibrary.Models.EngineTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,7 +100,7 @@ namespace CaseLibrary.Data
 
         private static readonly Dictionary<string, Blog> Blogs = new Dictionary<string, Blog>()
         {
-        { "BL001", new Blog("Season Highlights:",
+        { "BL001", new Blog("Season Highlights",
 
             Users["alice.johnson@example.com"],
 
@@ -122,7 +123,7 @@ namespace CaseLibrary.Data
             "Let’s keep sailing towards success, together",
 
             "2024-12-01") },
-        { "BL002", new Blog("Sailing Community:",
+        { "BL002", new Blog("Sailing Community",
 
             Users["bob.smith@example.com"],
 
@@ -148,7 +149,7 @@ namespace CaseLibrary.Data
             "Together, we will sail toward success – both on and off the water!",
 
             "2024-11-25") },
-        { "BL003", new Blog("Sailing Growth:",
+        { "BL003", new Blog("Sailing Growth",
 
             Users["charlie.brown@example.com"],
 
@@ -173,7 +174,7 @@ namespace CaseLibrary.Data
 
             "2024-12-03") },
 
-        { "BL004", new Blog("Friendly Competition:",
+        { "BL004", new Blog("Friendly Competition",
 
             Users["diana.prince@example.com"],
 

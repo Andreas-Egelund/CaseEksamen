@@ -1,19 +1,16 @@
 ﻿using CaseLibrary.interfaces;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace CaseLibrary.Models
+namespace CaseLibrary.Models.EngineTypes
 {
-    public class JetDriveEngine : IEngine
+    public class ElectricEngine : IEngine
     {
 
-        public JetDriveEngine(string type, int enginePower, string engineRating, string engineSpeed)
+        public ElectricEngine(string type, int enginePower, string engineRating, string engineSpeed)
         {
             Type = type;
             EnginePower = enginePower;
@@ -39,6 +36,8 @@ namespace CaseLibrary.Models
                 $"Engine Rating: {EngineRating}\n" +
                 $"Engine speed: {EngineSpeed}RPM\n";
         }
+
+
 
 
     }

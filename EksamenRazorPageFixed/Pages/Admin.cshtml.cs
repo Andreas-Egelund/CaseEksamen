@@ -2,6 +2,7 @@ using CaseLibrary.Data;
 using CaseLibrary.Entities;
 using CaseLibrary.interfaces;
 using CaseLibrary.Models;
+using CaseLibrary.Models.EngineTypes;
 using CaseLibrary.Services;
 using CaseLibrary.Servicses;
 using Microsoft.AspNetCore.Identity;
@@ -81,14 +82,35 @@ namespace EksamenRazorPageFixed.Pages
             }
         }
 
-        public void OnPostAddMotorBoat(string boatNumber, string name, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance)
+        public void OnPostAddMotorBoat(string boatNumber, string name, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance, string engineType)
         {
+            IEngine engine = new PropellerEngine("Propeller", 250, "ICFN", "2000");
 
             try
             {
-                MotorBoat newMotorboat = new MotorBoat(boatNumber, name, model, measure, yearOfConstruction, needsRepair, lastRepair, lastMaintenance, new JetDriveEngine("DI09 070M", 250, "ICFN", "2000"));
 
-                Boats.TryAdd(newMotorboat.BoatNumber, newMotorboat);
+                switch (engineType)
+                {
+                    case "PropellerEngine":
+                        engine = new PropellerEngine("Propeller", 250, "ICFN", "2000");
+
+                        
+                        break;
+
+                    case "JetEngineDrive":
+                        engine = new PropellerEngine("JetDrive", 250, "ICFN", "2005")
+                        break;
+
+                    case "ElectricEngine":
+                        engine = new PropellerEngine("Propeller", 250, "ICFN", "2000")
+                        break;
+
+                    default:
+                        break;
+                }
+
+                MotorBoat MotorboatPropel = new MotorBoat(boatNumber, name, model, measure, yearOfConstruction, needsRepair, lastRepair, lastMaintenance, engine);
+                Boats.TryAdd(MotorboatPropel.BoatNumber, MotorboatPropel);
             }
             catch (Exception ex)
             {
@@ -100,15 +122,18 @@ namespace EksamenRazorPageFixed.Pages
 
         public void OnPostUpdateUser(string EditedUserEmail)
         {
+           var user = Users[EditedUserEmail];
+
+
             try
             {
-                Users[EditedUserEmail].Name = Request.Form[$"Users[{EditedUserEmail}].Name"];
-                Users[EditedUserEmail].Email = Request.Form[$"Users[{EditedUserEmail}].Email"];
-                Users[EditedUserEmail].Password = Request.Form[$"Users[{EditedUserEmail}].Password"];
-                Users[EditedUserEmail].Phone = Request.Form[$"Users[{EditedUserEmail}].Phone"];
-                Users[EditedUserEmail].Address = Request.Form[$"Users[{EditedUserEmail}].Address"];
-                Users[EditedUserEmail].City = Request.Form[$"Users[{EditedUserEmail}].City"];
-                Users[EditedUserEmail].ZipCode = Request.Form[$"Users[{EditedUserEmail}].ZipCode"];
+                user.Name = Request.Form[$"Users[{EditedUserEmail}].Name"];
+                user.Email = Request.Form[$"Users[{EditedUserEmail}].Email"];
+                user.Password = Request.Form[$"Users[{EditedUserEmail}].Password"];
+                user.Phone = Request.Form[$"Users[{EditedUserEmail}].Phone"];
+                user.Address = Request.Form[$"Users[{EditedUserEmail}].Address"];
+                user.City = Request.Form[$"Users[{EditedUserEmail}].City"];
+                user.ZipCode = Request.Form[$"Users[{EditedUserEmail}].ZipCode"];
             }
             catch (Exception ex)
             {
@@ -199,6 +224,11 @@ namespace EksamenRazorPageFixed.Pages
         {
             try
             {
+                foreach (var user in BookableEvents[EditedEventId].AssignedMembers.Values)
+                {
+                    user.AssignedEvents.Remove(EditedEventId);
+                }
+
                 BookableEvents.Remove(EditedEventId);
             }
             catch (Exception ex)
