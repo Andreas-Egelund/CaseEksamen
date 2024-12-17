@@ -104,7 +104,7 @@ namespace CaseLibrary.Data
 
             Users["alice.johnson@example.com"],
 
-            "What an incredible season it’s been for Breezeway Sailing Club:\n" +
+            "What an incredible season it’s been for Hillerød Sejlklub\n" +
             "From first-time racers to seasoned veterans, our members have accomplished so much this year.\n"+
             "Here’s a look back at some of the standout moments, from championship wins to personal milestones.\n"+
             "First, we want to congratulate our members who secured podium finishes at the prestigious What an incredible season it’s been for Breezeway Sailing Club.\n"+

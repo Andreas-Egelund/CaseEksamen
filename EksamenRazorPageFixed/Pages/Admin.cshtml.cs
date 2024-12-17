@@ -98,11 +98,11 @@ namespace EksamenRazorPageFixed.Pages
                         break;
 
                     case "JetEngineDrive":
-                        engine = new PropellerEngine("JetDrive", 250, "ICFN", "2005")
+                        engine = new PropellerEngine("JetDrive", 250, "ICFN", "2005");
                         break;
 
                     case "ElectricEngine":
-                        engine = new PropellerEngine("Propeller", 250, "ICFN", "2000")
+                        engine = new PropellerEngine("Propeller", 250, "ICFN", "2000");
                         break;
 
                     default:
