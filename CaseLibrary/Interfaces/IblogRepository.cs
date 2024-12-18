@@ -16,7 +16,7 @@ namespace CaseLibrary.Interfaces
 
         Blog GetBlogByAuthor(string author);
 
-        void UpdateBlogByAuthor(string author);
+        void UpdateBlogByBlogId(string BlogId);
 
         void DeleteBlogByAuthor(string author);
     }
