@@ -9,31 +9,20 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Servicses
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository // We inherit from our IUserRepository
     {
 
-
-        /// <summary>
-        /// Makes a dcitionary to handle the users to be recieved from MockData.cs
-        /// </summary>
         private Dictionary<string, User> _users;
 
-
-
-        /// <summary>
-        /// Recieves a list of Users through GetUsers() methodcall from MockData.cs
-        /// </summary>
         public UserRepository()
         {
-            _users = MockData.GetUsers();
+            _users = MockData.GetUsers(); // Here we create our dictionary
         }
 
 
         /// <summary>
-        /// This method adds a User to the user dictionary by taking Email as parameter for the key and User object for the value
+        /// This method takes the parameter user of type User and adds it to our dictionary of Users where key is the email and the Usersobject is the value
         /// </summary>
-        /// <param name="email">This Email is used as a key in the user list</param>
-        /// <param name="user">This is the entire user object</param>
         public void AddUser(string email, User user)
         {
             _users.TryAdd(email, user);
@@ -41,9 +30,9 @@ namespace CaseLibrary.Servicses
 
 
         /// <summary>
-        /// If the given key recieved as argument for email parameter is found within the User dictionary, this method removes the corresponding Key,valuePair
+        /// This method takes the paramenter email of type string, that search in the dictionary and if there's a key then it remove the entire <key, value> pair 
         /// </summary>
-        /// <param name="email">This Email is used as a key in the user list</param>
+        /// <param name="email">
         public void DeleteUserByEmail(string email)
         {
             if (_users.Keys.Contains(email))
@@ -63,10 +52,10 @@ namespace CaseLibrary.Servicses
 
 
         /// <summary>
-        /// This methods checks if given key exist in the dictionary. If true the method returns the User with the corresponding key given as argument for Email parameter. If key isn't found method will return null
+        /// This method takes the parameter email of type string, checks if the given key is present in the dictionary, if true returns the corresponding <key,value> Pair
         /// </summary>
-        /// <param name="email">This Email is used as a key in the user list</param>
-        /// <returns>Returns the value of the given key or returns null</returns>
+        /// <param name="email">
+        /// <returns></returns>
         public User GetUserByEmail(string email)
         {
             if(_users.ContainsKey(email))

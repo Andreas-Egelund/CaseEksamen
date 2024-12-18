@@ -22,10 +22,11 @@ namespace EksamenRazorPageFixed.Pages
         public Dictionary<string, Booking> Bookings { get; set; }
 
 
-        public AdminModel(UserRepository userRepo, BoatRepository boatRepo, BlogRepository blogRepo,EventRepository eventRepo, BookingRepository bookingRepo)
+        public AdminModel(UserRepository userRepo, BoatRepository boatRepo, BlogRepository blogRepo,EventRepository eventRepo, BookingRepository bookingRepo) // here we take the repos to get our data
         {
-            Users = userRepo.GetAllUsers();
-            Boats = boatRepo.GetAllBoats();
+            // We take our new dictionarys, then we transfer the data from repos to the new dictionary
+            Users = userRepo.GetAllUsers();  
+            Boats = boatRepo.GetAllBoats();  
             Blogs = blogRepo.GetAllBlogs();
             BookableEvents = eventRepo.GetAllEvents();
             Bookings = bookingRepo.GetAllBooking();
@@ -36,6 +37,10 @@ namespace EksamenRazorPageFixed.Pages
         }
 
 
+
+        /// <summary>
+        /// This method takes the parameters of User constructor of type string and adds it to our dictionary of Users where key is the Email and the userobject is the value
+        /// </summary>
         public void OnPostAddUser(string name, string email, string password, string phone, string address, string city, string zipCode)
         {
 
@@ -51,6 +56,9 @@ namespace EksamenRazorPageFixed.Pages
                 MyErrorMessage = ex.Message;
             }
         }
+
+
+
 
         public void OnPostAddRowBoat(string boatNumber, string name, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance,string woodGrain)
         {
@@ -82,6 +90,10 @@ namespace EksamenRazorPageFixed.Pages
             }
         }
 
+
+        /// <summary>
+        /// This Method recieves arguments to the parameters of the motorboat constructor from the associated form and makes a new MotorBoat obj with these arguments
+        /// </summary>
         public void OnPostAddMotorBoat(string boatNumber, string name, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance, string engineType)
         {
             IEngine engine = new PropellerEngine("Propeller", 250, "ICFN", "2000");
@@ -120,14 +132,28 @@ namespace EksamenRazorPageFixed.Pages
 
         }
 
+
+
+
+
+
+
+
+        /// <summary>
+        /// This method takes parameter EditedUserEmail of type string that receives the email of the user currently being edited as argument.
+        /// </summary>
+        /// <param name="EditedUserEmail"></param>
         public void OnPostUpdateUser(string EditedUserEmail)
         {
-           var user = Users[EditedUserEmail];
-
+           User user = Users[EditedUserEmail];   // saves the user currently being edit as var user  
 
             try
             {
-                user.Name = Request.Form[$"Users[{EditedUserEmail}].Name"];
+                user.Name = Request.Form[$"Users[{EditedUserEmail}].Name"];    //Here we use Request.Form to get the value from the form with corresponding name.
+                                                                               //For Example:  name="Users[@user.Email].Name"  Will be given the value of whatever the Admin types into the form.
+                                                                               //In this case we then assign this value to the users property "Name"
+                                                                               //@user.Email will have the same value as EditedUserEmail
+
                 user.Email = Request.Form[$"Users[{EditedUserEmail}].Email"];
                 user.Password = Request.Form[$"Users[{EditedUserEmail}].Password"];
                 user.Phone = Request.Form[$"Users[{EditedUserEmail}].Phone"];
@@ -143,6 +169,11 @@ namespace EksamenRazorPageFixed.Pages
 
         }
 
+
+        /// <summary>
+        /// This method takes the paramenter EditedUserEmail of type string, that search in the dictionary and if there's a key then it remove the entire <key, value> pair
+        /// </summary>
+        /// <param name="EditedUserEmail"></param>
         public void OnPostRemoveUser(string EditedUserEmail)
         {
             try
@@ -172,7 +203,9 @@ namespace EksamenRazorPageFixed.Pages
                 Boats[EditedBoatNumber].Model = Request.Form[$"Boats[{EditedBoatNumber}].Model"];
                 Boats[EditedBoatNumber].Measurements = Request.Form[$"Boats[{EditedBoatNumber}].Measurements"];
 
-                int.TryParse(Request.Form[$"Boats[{EditedBoatNumber}].YearOfConstruction"], out int year);
+                int.TryParse(Request.Form[$"Boats[{EditedBoatNumber}].YearOfConstruction"], out int year);  //Values from form will always be string by default.
+                                                                                                            //Here we try to parse what the user has written in the form, to get the interger value and assign it to the property "YearOfConstruction".
+                                                                                                            //If we cannot parse this the value will be set to int 0
                 Boats[EditedBoatNumber].YearOfConstruction = year;
 
 
@@ -254,10 +287,13 @@ namespace EksamenRazorPageFixed.Pages
 
 
 
-
-        public IActionResult OnPostCreatingBlog(string Blogid)
+       /// <summary>
+       /// This method takes you to a new page 
+       /// </summary>
+       /// <param name="Blogid"></param>
+       /// <returns></returns>
+        public IActionResult OnPostCreatingBlog()
         {
-            TempData["BlogsId"] = Blogid;
             return RedirectToPage("BlogPage/CreatingBlogs");
         }
 
