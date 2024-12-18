@@ -8,3 +8,18 @@ html {
   }
 }
 
+
+.baggrund-sektion {
+    background-image: url('../Images/FrontPageImages/ForsideSidet.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    color: white;
+    padding: 200px; 
+    text-align: center; 
+}
+
+<nav>
+
+
+
