@@ -21,6 +21,10 @@ namespace EksamenRazorPageFixed.Pages.BlogPage
         public void OnGet()
         {
         }
+
+
+
+
         public void OnPostAddBlog(string Title, string authorMail, string Bodytext, string Date)
         {
             try

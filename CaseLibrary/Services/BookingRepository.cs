@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace CaseLibrary.Services
 {
-    public class BookingRepository : IBookingRepository
+    public class BookingRepository : IBookingRepository // We inherit from our IBookingRepository
     {
 
-        private Dictionary<string, Booking> _bookings;
+        private Dictionary<string, Booking> _bookings; // Here we create our dictionary
 
 
         public BookingRepository()
@@ -21,11 +21,21 @@ namespace CaseLibrary.Services
             _bookings = MockData.GetBookings();
         }
 
+
+        /// <summary>
+        /// This method takes the parameter booking of type Booking and adds it to our dictionary of Bookings where key is the BookingId and the bookingobject is the value
+        /// </summary>
         public void AddBooking(Booking booking)
         {
             _bookings.TryAdd(booking.BookingId, booking);
         }
 
+
+
+        /// <summary>
+        /// This method takes the paramenter bookingId of type string, that search in the dictionary and if there's a key then it remove the entire <key, value> pair 
+        /// </summary>
+        /// <param name="bookingId"></param>
         public void DeleteBookingById(string bookingId)
         {
             if (_bookings.Keys.Contains(bookingId))
@@ -34,11 +44,23 @@ namespace CaseLibrary.Services
             }
         }
 
+
+        /// <summary>
+        /// retuns Bookings dictionary
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<string, Booking> GetAllBooking()
         {
             return _bookings;
         }
 
+        
+
+        /// <summary>
+        /// This method takes the parameter bookingsId of type string, checks if the given key is present in the dictionary, if true returns the corresponding <key,value> Pair
+        /// </summary>
+        /// <param name="bookingId"></param>
+        /// <returns></returns>
         public Booking GetBookingById(string bookingId)
         {
             if (_bookings.ContainsKey(bookingId))
