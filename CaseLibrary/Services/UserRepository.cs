@@ -1,6 +1,7 @@
 ﻿using CaseLibrary.Data;
 using CaseLibrary.Entities;
 using CaseLibrary.interfaces;
+using CaseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,9 +35,9 @@ namespace CaseLibrary.Servicses
         /// </summary>
         /// <param name="email">This Email is used as a key in the user list</param>
         /// <param name="user">This is the entire user object</param>
-        public void AddUser(string email, User user)
+        public void AddUser(User user)
         {
-            _users.TryAdd(email, user);
+            _users.TryAdd(user.Email, user);
         }
 
 
@@ -65,7 +66,7 @@ namespace CaseLibrary.Servicses
         /// <summary>
         /// This methods checks if given key exist in the dictionary. If true the method returns the User with the corresponding key given as argument for Email parameter. If key isn't found method will return null
         /// </summary>
-        /// <param name="email">This Email is used as a key in the user list</param>
+        /// <param name="email">This Email is used as a key in the user </param>
         /// <returns>Returns the value of the given key or returns null</returns>
         public User GetUserByEmail(string email)
         {
@@ -78,13 +79,113 @@ namespace CaseLibrary.Servicses
 
 
 
-        //TODO This Method is not working as intended. Will overwrite the User with given key to have a value of each element until last element in dictionary, resulting in always overwriting given key,valuePair with last element of dict.
+     
         public void UpdateUserByEmail(string email)
         {
-            foreach (var user in _users.Values ) 
+
+
+            try
             {
-                _users[email] = user;
+
+
+                User currentUser = GetUserByEmail(email);
+
+
+                Console.WriteLine($"You are editing this User: \n\n {currentUser}");
+
+                Console.WriteLine("Do you want to edit the Name of this user?\n" +
+                    "(Y)es or (N)o?");
+
+                string answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write the new User Name here: \n");
+                    currentUser.Name = Console.ReadLine();
+                }
+
+
+
+
+                Console.WriteLine("Do you want to edit the password of this user?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write the new User password here: \n");
+                    currentUser.Password = Console.ReadLine();
+                }
+
+
+
+
+                Console.WriteLine("Do you want to edit the phonenumber of this user?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write the new User phonenumber here: \n");
+                    currentUser.Phone = Console.ReadLine();
+                }
+
+
+                Console.WriteLine("Do you want to edit the address of this user?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write the new User address here: \n");
+                    currentUser.Address = Console.ReadLine();
+                }
+
+
+
+
+                Console.WriteLine("Do you want to edit the city of this user?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write the new User city here: \n");
+                    currentUser.City = Console.ReadLine();
+                }
+
+
+
+                Console.WriteLine("Do you want to edit the zipcode of this user?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write the new User zipcode here: \n");
+                    currentUser.ZipCode = Console.ReadLine();
+                }
+
             }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+
+
+
+
+
+
         }
     }
 }

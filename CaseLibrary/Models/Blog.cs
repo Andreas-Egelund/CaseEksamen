@@ -36,8 +36,8 @@ namespace CaseLibrary.Models
         {
             return $"---------------------------------------\n" +
                 $"BlogTitel: {BlogTitel}\n" +
-                $"Author:  {Author}\n" +
-                $"BodyText: Too Much Text\n" +
+                $"Author:  {Author.Name}\n" +
+                $"BodyText: \n \n{BodyText}\n \n" +
                 $"Date: {Date}\n" +
                 $"---------------------------------------\n";
         }

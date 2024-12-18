@@ -38,22 +38,12 @@ namespace CaseLibrary.Entities
             AssignedEvents = new Dictionary<string, BookableEvent>();
         }
 
-        public void Login()
-        {
-            Console.WriteLine("User is logged in");
-        }
 
-
-
-        public void logout()
-        {
-            Console.WriteLine("gedhegeh");
-        }
 
 
         public override string ToString()
         {
-            if (AssignedBookings.Count > 0)
+            if (AssignedBookings.Count > 0 || AssignedEvents.Count >0)
             {
                 return $"--------------------------------------\n" +
                 $"Name: {Name}\n" +
@@ -62,7 +52,8 @@ namespace CaseLibrary.Entities
                 $"Adress: {Address}\n" +
                 $"City: {City}\n" +
                 $"Zipcode: {ZipCode}\n" +
-                $"Bookings assigned to user: \n{string.Join("\n",AssignedBookings.Values)}\n";
+                $"Bookings assigned to user: \n{string.Join("\n",AssignedBookings.Values.Select(booking => booking.BookingId))}\n" +
+                $"Events assigned to user: \n{string.Join("\n", AssignedEvents.Values.Select(bookableEvent => bookableEvent.EventId))}\n";
             }
             else
             {
@@ -85,6 +76,7 @@ namespace CaseLibrary.Entities
         public void AssignUserToEvent(BookableEvent bookableEvent)
         {
             AssignedEvents.TryAdd(bookableEvent.EventId, bookableEvent);
+            bookableEvent.AssignedMembers.TryAdd(Email, this);
         }
 
 

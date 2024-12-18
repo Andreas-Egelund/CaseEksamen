@@ -18,6 +18,12 @@ namespace CaseLibrary.Models
             SailMaterial = sailMaterial;
         }
 
+        public override string PrintAllBoatInfo()
+        {
+            return base.PrintAllBoatInfo() + $"This is a Sailboat with this type of sailmaterial:\n {SailMaterial}";
+        }
+
+
 
         public override string ToString()
         {

@@ -27,10 +27,7 @@ namespace CaseLibrary.Models.EngineTypes
         public string EngineSpeed { get; set; }
         
 
-        public string AllEngineInfo()
-        {
-            throw new NotImplementedException();
-        }
+
 
         public override string ToString()
         {

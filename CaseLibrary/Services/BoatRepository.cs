@@ -23,9 +23,9 @@ namespace CaseLibrary.Servicses
         }
 
 
-        public void AddBoat(string sailNumber, Boat boat)
+        public void AddBoat(Boat boat)
         {
-            _boats.TryAdd(sailNumber, boat);
+            _boats.TryAdd(boat.BoatNumber, boat);
         }
 
         public void DeleteBoatBySailNumber(string sailNumber)
@@ -54,13 +54,92 @@ namespace CaseLibrary.Servicses
 
 
 
-        //TODO This Method is not working as intended. Will overwrite the Boat with given key to have a value of each element until last element in dictionary, resulting in always overwriting given key,valuePair with last element of dict.
         public void UpdateBoatBySailNumber(string sailNumber)
         {
-            foreach(var boat in _boats.Values) 
+
+
+            try
             {
-                _boats[sailNumber] = boat; 
+                Boat currentBoat = GetBoatBySailNumber(sailNumber);
+
+
+                Console.WriteLine($"You are editing this Boat: \n\n {currentBoat}");
+
+                Console.WriteLine("Do you want to edit the name of the Boat?\n" +
+                    "(Y)es or (N)o?");
+
+                string answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new Boat name here: \n");
+                    currentBoat.Name = Console.ReadLine();
+                }
+
+
+
+                Console.WriteLine("Do you want to edit the model of the Boat?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new Boat model here: \n");
+                    currentBoat.Model = Console.ReadLine();
+                }
+
+
+
+
+                Console.WriteLine("Do you want to edit the lenght of the Boat?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new Boat length here: \n");
+                    currentBoat.Measurements = Console.ReadLine();
+                }
+
+
+
+
+                Console.WriteLine("Do you want to mark something for repair?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write the part that needs repair here: \n");
+                    currentBoat.NeedsRepair = Console.ReadLine();
+                }
+
+
             }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+
         }
+
+
+
     }
+
+            
+
+
+
+
+
+
+
+
+    
 }

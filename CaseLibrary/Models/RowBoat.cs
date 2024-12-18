@@ -19,6 +19,14 @@ namespace CaseLibrary.Models
         }
 
 
+        public override string PrintAllBoatInfo()
+        {
+            return base.PrintAllBoatInfo() + $"This is a Rowboat with this woodgrain type:\n {WoodGrain}";
+        }
+
+
+
+
         public override string ToString()
         {
 

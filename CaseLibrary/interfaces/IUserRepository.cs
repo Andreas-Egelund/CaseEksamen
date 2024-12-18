@@ -10,7 +10,7 @@ namespace CaseLibrary.interfaces
     public interface IUserRepository
     {
 
-        void AddUser(string email, User user);
+        void AddUser(User user);
 
         Dictionary<string,User> GetAllUsers();
 

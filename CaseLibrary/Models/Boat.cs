@@ -34,7 +34,8 @@ namespace CaseLibrary.Entities
         public virtual string PrintAllBoatInfo()
         {
 
-            return $"---------------------------------------\n" +
+            return $"" +
+                $"-------------Using PrintAllBoatInfo method-------------\n" +
                 $"BoatNumber: {BoatNumber}\n" +
                 $"Name {Name}\n" +
                 $"Model: {Model}\n" +

@@ -18,6 +18,7 @@ namespace CaseLibrary.Services
         public BlogRepository()
         {
             _blogs = MockData.GetBlogs();
+
         }
 
         public void AddBlog(Blog blog)
@@ -40,7 +41,7 @@ namespace CaseLibrary.Services
 
         public Blog GetBlogByBlogId(string BlogId)
         {
-
+            
             if (_blogs.ContainsKey(BlogId))
             {
                 return (_blogs[BlogId]);
@@ -50,7 +51,44 @@ namespace CaseLibrary.Services
 
         public void UpdateBlogByBlogId(string BlogId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Blog currentBlog = GetBlogByBlogId(BlogId);
+
+
+                Console.WriteLine($"You are editing this blog: \n\n {currentBlog}");
+
+                Console.WriteLine("Do you want to edit the Blog title?\n" +
+                    "(Y)es or (N)o?");
+
+                string answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" ||answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new title here: \n");
+                    currentBlog.BlogTitel = Console.ReadLine();
+                    currentBlog.Date = $"{DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year}";   
+                }
+
+                 Console.WriteLine("Do you want to edit the Blogs content?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new Blog content here: \n");
+                    currentBlog.BodyText = Console.ReadLine();
+                    currentBlog.Date = $"{DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year}";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+            
         }
     }
 }

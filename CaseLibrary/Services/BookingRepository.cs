@@ -50,11 +50,77 @@ namespace CaseLibrary.Services
 
 
 
-        //TODO This Method is not working as intended. Will overwrite the Booking with given key to have a value of each element until last element in dictionary, resulting in always overwriting given key,valuePair with last element of dict.
         public void UpdatebookingById(string bookingId)
         {
 
-            
+            try
+            {
+
+
+                Booking currentBooking = GetBookingById(bookingId);
+
+
+                Console.WriteLine($"You are editing this booking: \n\n {currentBooking}");
+
+                Console.WriteLine("Do you want to edit the date of the booking?\n" +
+                    "(Y)es or (N)o?");
+
+                string answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new date here  dd/m/year: \n");
+                    currentBooking.Date = Console.ReadLine();
+                }
+
+
+
+                Console.WriteLine("Do you want to edit the duration of the booking?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new duration in hours here : \n");
+                    currentBooking.Duration = Console.ReadLine();
+                }
+
+
+
+
+                Console.WriteLine("Do you want to edit the location of the booking?\n" +
+                    "(Y)es or (N)o?");
+
+                answer = Console.ReadLine();
+
+                if (answer.ToLower() == "y" || answer.ToLower() == "yes")
+                {
+                    Console.WriteLine("Please write your new location here:\n");
+                    currentBooking.Location = Console.ReadLine();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
     }

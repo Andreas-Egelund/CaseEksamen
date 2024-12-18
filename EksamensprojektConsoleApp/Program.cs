@@ -10,13 +10,40 @@ using CaseLibrary.Servicses;
 BoatRepository boatRepo = new BoatRepository();
 UserRepository userRepo = new UserRepository();
 BookingRepository bookingRepo = new BookingRepository();
+BlogRepository blogRepo = new BlogRepository();
+EventRepository eventRepo = new EventRepository();
 
 
+userRepo.GetUserByEmail("ethan.hunt@example.com").AssignUserToEvent(eventRepo.GetEventById("BE-Id-101"));
+
+
+
+Console.WriteLine(userRepo.GetUserByEmail("ethan.hunt@example.com"));
+
+
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
+Console.WriteLine(eventRepo.GetEventById("BE-Id-101")); 
+
+
+
+
+
+
+
+/*
 
 foreach(Booking booking in bookingRepo.GetAllBooking().Values)
 {
     Console.WriteLine(booking);
 }
+
+
 
 Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------");
 
@@ -30,7 +57,7 @@ foreach (Booking booking in bookingRepo.GetAllBooking().Values)
     Console.WriteLine(booking);
 }
 
-
+*/
 
 
 /*

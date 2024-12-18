@@ -9,7 +9,7 @@ namespace CaseLibrary.interfaces
 {
     public interface IBoatRepository
     {
-        void AddBoat(string sailNumber, Boat boat);
+        void AddBoat(Boat boat);
 
         Dictionary<string, Boat> GetAllBoats();
 

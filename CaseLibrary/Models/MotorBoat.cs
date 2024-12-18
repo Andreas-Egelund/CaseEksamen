@@ -22,6 +22,13 @@ namespace CaseLibrary.Models
 
 
 
+        public override string PrintAllBoatInfo()
+        {
+            return base.PrintAllBoatInfo() + $"This is a MotorBoat with this engine:\n {Engine}";
+        }
+
+
+
 
         public override string ToString()
         {

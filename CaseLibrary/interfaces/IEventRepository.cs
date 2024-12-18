@@ -9,7 +9,7 @@ namespace CaseLibrary.interfaces
 {
     public interface IEventRepository
     {
-        void AddEvent(string EventId, BookableEvent bookableEvent);
+        void AddEvent(BookableEvent bookableEvent);
 
         Dictionary<string, BookableEvent> GetAllEvents();
 

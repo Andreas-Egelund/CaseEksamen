@@ -44,7 +44,7 @@ namespace CaseLibrary.Models
             $"EventName: {EventName}\n" +
             $"Date: {Date}\n" +
             $"Duration: {Duration}\n" +
-            $"Member signed up for this event:\n{string.Join("\n", AssignedMembers.Values)}\n";
+            $"Member signed up for this event:\n{string.Join("\n", AssignedMembers.Values.Select(user => user.Name))}\n";
 
             
             
