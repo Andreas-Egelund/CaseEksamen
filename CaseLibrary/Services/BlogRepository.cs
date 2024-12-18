@@ -108,9 +108,7 @@ namespace CaseLibrary.Services
             {
 
                 Console.WriteLine(ex.Message);
-            }
-
-            
+            }   
         }
     }
 }

@@ -14,7 +14,7 @@ BookingRepository bookingRepo = new BookingRepository();
 BlogRepository blogRepo = new BlogRepository();
 EventRepository eventRepo = new EventRepository();
 
-
+/*
 userRepo.GetUserByEmail("ethan.hunt@example.com").AssignUserToEvent(eventRepo.GetEventById("BE-Id-101"));
 
 
@@ -32,6 +32,20 @@ Console.WriteLine(newBoat);
 Console.WriteLine(newBoat2);
 Console.WriteLine(newBoat3);
 
+*/
+
+
+Booking booking = bookingRepo.GetBookingById("BK-Id-101");
+
+
+
+
+
+bookingRepo.UpdatebookingById("BK-Id-101");
+
+
+
+Console.WriteLine(booking);
 
 
 /*

@@ -12,23 +12,15 @@ namespace CaseLibrary.Models
     {
         public IEngine Engine { get; set; }
 
-
-
-        public MotorBoat(string boatNumber, string name, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance, IEngine engine) : base(boatNumber, name, model, measure, yearOfConstruction, needsRepair, lastRepair, lastMaintenance)
+        public MotorBoat(string boatNumber, string name, string model, string measure, int yearOfConstruction, string needsRepair, string lastRepair, string lastMaintenance, IEngine engine) : 
+            base(boatNumber, name, model, measure, yearOfConstruction, needsRepair, lastRepair, lastMaintenance)
         {
             Engine = engine;
         }
-
-
-
-
         public override string PrintAllBoatInfo()
         {
             return base.PrintAllBoatInfo() + $"This is a MotorBoat with this engine:\n {Engine}";
         }
-
-
-
 
         public override string ToString()
         {
@@ -43,13 +35,6 @@ namespace CaseLibrary.Models
                 $"Last Repair: {LastRepair}\n" +
                 $"Last Maintenance: {LastMaintenance}\n" +
                 $"Engine info: {Engine}\n";
-
-
         }
-
-
-
-
-
     }
 }

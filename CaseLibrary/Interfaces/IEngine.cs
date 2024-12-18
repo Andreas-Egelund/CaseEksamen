@@ -15,8 +15,5 @@ namespace CaseLibrary.interfaces
         string EngineRating { get; set; }
 
         string EngineSpeed { get; set; }
-
-
-
     }
 }

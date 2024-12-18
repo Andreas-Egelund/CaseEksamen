@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CaseLibrary.Services
 {
@@ -72,8 +73,10 @@ namespace CaseLibrary.Services
 
 
 
+
         public void UpdatebookingById(string bookingId)
         {
+
 
             try
             {
@@ -129,21 +132,10 @@ namespace CaseLibrary.Services
 
                 Console.WriteLine(ex.Message);
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
+
+
+  
+
     }
 }
