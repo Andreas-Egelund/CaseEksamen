@@ -4,6 +4,7 @@ using CaseLibrary.Data;
 using CaseLibrary.Entities;
 using CaseLibrary.interfaces;
 using CaseLibrary.Models;
+using CaseLibrary.Models.EngineTypes;
 using CaseLibrary.Services;
 using CaseLibrary.Servicses;
 
@@ -18,21 +19,18 @@ userRepo.GetUserByEmail("ethan.hunt@example.com").AssignUserToEvent(eventRepo.Ge
 
 
 
-Console.WriteLine(userRepo.GetUserByEmail("ethan.hunt@example.com"));
+MotorBoat newBoat = new MotorBoat("123","Testname", "testmodel", "testmeasurements", 2000,"no","lastrepair","lastmaintenance", new PropellerEngine("enginetypetest",500,"testreating","testenginespeed"));
 
+MotorBoat newBoat2 = new MotorBoat("123", "Testname", "testmodel", "testmeasurements", 2000, "no", "lastrepair", "lastmaintenance", new JetDriveEngine("enginetypetest", 500, "testreating", "testenginespeed"));
 
-Console.WriteLine();
-Console.WriteLine();
-Console.WriteLine();
-Console.WriteLine();
-Console.WriteLine();
-Console.WriteLine();
-
-Console.WriteLine(eventRepo.GetEventById("BE-Id-101")); 
+MotorBoat newBoat3 = new MotorBoat("123", "Testname", "testmodel", "testmeasurements", 2000, "no", "lastrepair", "lastmaintenance", new ElectricEngine("enginetypetest", 500, "testreating", "testenginespeed"));
 
 
 
 
+Console.WriteLine(newBoat);
+Console.WriteLine(newBoat2);
+Console.WriteLine(newBoat3);
 
 
 

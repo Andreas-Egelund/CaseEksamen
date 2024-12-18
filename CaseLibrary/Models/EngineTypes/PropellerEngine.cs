@@ -28,7 +28,7 @@ namespace CaseLibrary.Models.EngineTypes
 
         public override string ToString()
         {
-            return $"" +
+            return $"\n---PropellerEngine---\n" +
                 $"Type: {Type}\n" +
                 $"Engine power: {EnginePower}HP\n" +
                 $"Engine Rating: {EngineRating}\n" +
