@@ -36,7 +36,7 @@ namespace CaseLibrary.Services
         /// This method takes the paramenter author of type string, that search in the dictionary and if there's a key then it remove the entire <key, value> pair 
         /// </summary>
         /// <param name="author"></param>
-        public void DeleteBlogByAuthor(string author)
+        public void DeleteBlogByBlogId(string BlogId)
         {
             if (_blogs.Keys.Contains(BlogId))
             {
@@ -61,7 +61,7 @@ namespace CaseLibrary.Services
         /// </summary>
         /// <param name="author"></param>
         /// <returns></returns>
-        public Blog GetBlogByAuthor(string author)
+        public Blog GetBlogByBlogId(string BlogId)
         {
             
             if (_blogs.ContainsKey(BlogId))

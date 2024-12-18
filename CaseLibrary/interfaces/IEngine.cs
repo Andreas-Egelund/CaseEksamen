@@ -16,7 +16,6 @@ namespace CaseLibrary.interfaces
 
         string EngineSpeed { get; set; }
 
-        string AllEngineInfo();
 
 
     }
