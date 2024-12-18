@@ -25,11 +25,11 @@ namespace CaseLibrary.Services
             _blogs.TryAdd(blog.BlogId, blog);
         }
 
-        public void DeleteBlogByAuthor(string author)
+        public void DeleteBlogByBlogId(string BlogId)
         {
-            if (_blogs.Keys.Contains(author))
+            if (_blogs.Keys.Contains(BlogId))
             {
-                _blogs.Remove(author);
+                _blogs.Remove(BlogId);
             }
         }
 
@@ -38,17 +38,17 @@ namespace CaseLibrary.Services
             return _blogs;
         }
 
-        public Blog GetBlogByAuthor(string author)
+        public Blog GetBlogByBlogId(string BlogId)
         {
 
-            if (_blogs.ContainsKey(author))
+            if (_blogs.ContainsKey(BlogId))
             {
-                return (_blogs[author]);
+                return (_blogs[BlogId]);
             }
             else return null;
         }
 
-        public void UpdateBlogByAuthor(string author)
+        public void UpdateBlogByBlogId(string BlogId)
         {
             throw new NotImplementedException();
         }

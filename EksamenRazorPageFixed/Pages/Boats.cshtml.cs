@@ -24,5 +24,26 @@ namespace EksamenRazorPageFixed.Pages
         {
 
         }
+
+
+        public void OnPostFilterBoatsBySearch()
+        {
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
     }
 }
