@@ -37,9 +37,9 @@ namespace CaseLibrary.Services
         /// <param name="author"></param>
         public void DeleteBlogByAuthor(string author)
         {
-            if (_blogs.Keys.Contains(author))
+            if (_blogs.Keys.Contains(BlogId))
             {
-                _blogs.Remove(author);
+                _blogs.Remove(BlogId);
             }
         }
 
@@ -63,14 +63,14 @@ namespace CaseLibrary.Services
         public Blog GetBlogByAuthor(string author)
         {
 
-            if (_blogs.ContainsKey(author))
+            if (_blogs.ContainsKey(BlogId))
             {
-                return (_blogs[author]);
+                return (_blogs[BlogId]);
             }
             else return null;
         }
 
-        public void UpdateBlogByAuthor(string author)
+        public void UpdateBlogByBlogId(string BlogId)
         {
             throw new NotImplementedException();
         }

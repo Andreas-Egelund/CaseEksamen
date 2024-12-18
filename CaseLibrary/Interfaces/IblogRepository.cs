@@ -14,10 +14,10 @@ namespace CaseLibrary.Interfaces
 
         Dictionary<string, Blog> GetAllBlogs();
 
-        Blog GetBlogByAuthor(string author);
+        Blog GetBlogByBlogId(string blogId);
 
-        void UpdateBlogByAuthor(string author);
+        void UpdateBlogByBlogId(string blogId);
 
-        void DeleteBlogByAuthor(string author);
+        void DeleteBlogByBlogId(string blogId);
     }
 }
